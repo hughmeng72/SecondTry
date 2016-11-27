@@ -12,7 +12,26 @@
 		84BDDD1E1DEB3D8B0075ECAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BDDD1C1DEB3D8B0075ECAB /* Main.storyboard */; };
 		84BDDD201DEB3D8B0075ECAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84BDDD1F1DEB3D8B0075ECAB /* Assets.xcassets */; };
 		84BDDD231DEB3D8B0075ECAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BDDD211DEB3D8B0075ECAB /* LaunchScreen.storyboard */; };
+		84BDDD2E1DEB3ED60075ECAB /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BDDD2D1DEB3ED60075ECAB /* Gloss.framework */; };
+		84BDDD371DEB41580075ECAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDDD361DEB41580075ECAB /* User.swift */; };
+		84BDDD381DEB43640075ECAB /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BDDD2D1DEB3ED60075ECAB /* Gloss.framework */; };
+		84BDDD391DEB43640075ECAB /* Gloss.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84BDDD2D1DEB3ED60075ECAB /* Gloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84BDDD481DEB46970075ECAB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDDD471DEB46970075ECAB /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		84BDDD3A1DEB43640075ECAB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				84BDDD391DEB43640075ECAB /* Gloss.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		84BDDD151DEB3D8B0075ECAB /* PerkingOpera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerkingOpera.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +41,9 @@
 		84BDDD1F1DEB3D8B0075ECAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84BDDD221DEB3D8B0075ECAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84BDDD241DEB3D8B0075ECAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84BDDD2D1DEB3ED60075ECAB /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Gloss.framework; sourceTree = "<group>"; };
+		84BDDD361DEB41580075ECAB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		84BDDD471DEB46970075ECAB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84BDDD2E1DEB3ED60075ECAB /* Gloss.framework in Frameworks */,
+				84BDDD381DEB43640075ECAB /* Gloss.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +64,7 @@
 			children = (
 				84BDDD171DEB3D8B0075ECAB /* PerkingOpera */,
 				84BDDD161DEB3D8B0075ECAB /* Products */,
+				84BDDD2A1DEB3E940075ECAB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +85,18 @@
 				84BDDD1F1DEB3D8B0075ECAB /* Assets.xcassets */,
 				84BDDD211DEB3D8B0075ECAB /* LaunchScreen.storyboard */,
 				84BDDD241DEB3D8B0075ECAB /* Info.plist */,
+				84BDDD361DEB41580075ECAB /* User.swift */,
+				84BDDD471DEB46970075ECAB /* LoginViewController.swift */,
 			);
 			path = PerkingOpera;
+			sourceTree = "<group>";
+		};
+		84BDDD2A1DEB3E940075ECAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84BDDD2D1DEB3ED60075ECAB /* Gloss.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +109,7 @@
 				84BDDD111DEB3D8B0075ECAB /* Sources */,
 				84BDDD121DEB3D8B0075ECAB /* Frameworks */,
 				84BDDD131DEB3D8B0075ECAB /* Resources */,
+				84BDDD3A1DEB43640075ECAB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -137,8 +173,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84BDDD481DEB46970075ECAB /* LoginViewController.swift in Sources */,
 				84BDDD1B1DEB3D8B0075ECAB /* ViewController.swift in Sources */,
 				84BDDD191DEB3D8B0075ECAB /* AppDelegate.swift in Sources */,
+				84BDDD371DEB41580075ECAB /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +298,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3D7SD5D255;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PerkingOpera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jinglan.ios.PerkingOpera;
@@ -273,6 +315,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3D7SD5D255;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PerkingOpera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jinglan.ios.PerkingOpera;
@@ -300,6 +346,7 @@
 				84BDDD291DEB3D8B0075ECAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

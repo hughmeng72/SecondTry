@@ -14,9 +14,10 @@ struct User: Glossy {
     let token: String
     let userName: String
     let depId: Int
-    let RealName: String
-    let DepName: String
-
+    let realName: String?
+    let depName: String?
+    let error: ResponseBase
+    
     // MARK: - Deserialization
     
     init?(json: JSON) {
@@ -24,8 +25,7 @@ struct User: Glossy {
             let token: String = "token" <~~ json,
             let userName: String = "userName" <~~ json,
             let depId: Int = "depId" <~~ json,
-            let RealName: String = "RealName" <~~ json,
-            let DepName: String = "DepName" <~~ json
+            let error: ResponseBase = "error" <~~ json
             else {
                 return nil
             }
@@ -34,8 +34,9 @@ struct User: Glossy {
         self.token = token
         self.userName = userName
         self.depId = depId
-        self.RealName = RealName
-        self.DepName = DepName
+        self.realName = "RealName" <~~ json
+        self.depName = "depName" <~~ json
+        self.error = error
     }
     
     // MARK: - Serialization
@@ -46,8 +47,8 @@ struct User: Glossy {
             "token" ~~> self.token,
             "userName" ~~> self.userName,
             "depId" ~~> self.depId,
-            "RealName" ~~> self.RealName,
-            "DepName" ~~> self.DepName
+            "RealName" ~~> self.realName,
+            "DepName" ~~> self.depName
             ])
     }
 }

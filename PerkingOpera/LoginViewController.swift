@@ -9,44 +9,41 @@
 import Gloss
 import UIKit
 
-class LoginViewController: UIViewController, XMLParserDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate, XMLParserDelegate {
 
     @IBOutlet weak var UserName: UITextField!
     @IBOutlet weak var Password: UITextField!
 
     var elementValue: String?
+    var user: User?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Dismiss keyboard when user click anyplace else
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        self.view.endEditing(true)
+//        
+//        return true
+//    }
     
     @IBAction func Login(_ sender: Any) {
+//        let userName = "manager"
+//        let password = "1234567"
         
-        //        let controller2 = UIAlertController(
-        //            title: "Something Was Done",
-        //            message: "", preferredStyle: .alert)
-        //
-        //        let cancelAction = UIAlertAction(
-        //            title: "Ok",
-        //            style: .cancel, handler: nil)
-        //
-        //        controller2.addAction(cancelAction)
-        //
-        //        self.present(controller2, animated: true, completion: nil)
-        
-        //        let userName = UserName.text!
-        //        let password = Password.text!
-        
-        let userName = "manager"
-        let password = "123456"
+        let userName = UserName.text!
+        let password = Password.text!
         
         let bodyString = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
             "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" " +
@@ -79,9 +76,20 @@ class LoginViewController: UIViewController, XMLParserDelegate {
             }
             
             // if we've gotten here, update the UI
-            
             DispatchQueue.main.async {
-                self.Password.text = "Got result from web!"
+                if let user2 = self.user, user2.error.result != 1 {
+                    let controller = UIAlertController(
+                        title: self.user!.error.errorInfo,
+                        message: "", preferredStyle: .alert)
+                    
+                    let cancelAction = UIAlertAction(
+                        title: "Ok",
+                        style: .cancel, handler: nil)
+                    
+                    controller.addAction(cancelAction)
+                    
+                    self.present(controller, animated: true, completion: nil)
+                }
             }
         }
         task.resume()
@@ -108,7 +116,7 @@ class LoginViewController: UIViewController, XMLParserDelegate {
                 return
             }
             
-            print(user.userName)
+            self.user = user;
             
             elementValue = nil;
         }

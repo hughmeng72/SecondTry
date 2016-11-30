@@ -17,6 +17,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, XMLParserDeleg
     var elementValue: String?
     var user: User?
     
+    @IBOutlet weak var button: RoundButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

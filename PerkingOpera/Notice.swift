@@ -21,7 +21,7 @@ struct Notice : Glossy {
     
     init?(json: JSON) {
         guard let id: Int = "id" <~~ json,
-        let typeName: String = "typeName" <~~ json,
+        let typeName: String = "TypeName" <~~ json,
         let title: String = "Title" <~~ json,
         let filePath: String = "FilePath" <~~ json,
         let notes: String = "Notes" <~~ json,

@@ -23,7 +23,10 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func showNoticeList(_ sender: Any) {
+        self.performSegue(withIdentifier: "showNoticeList", sender: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

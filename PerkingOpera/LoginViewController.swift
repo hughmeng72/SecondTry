@@ -11,10 +11,12 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate, XMLParserDelegate {
 
+    private let soapMethod = "GetTokenByUserNameAndPassword"
+    
+    var elementValue: String?
+    
     @IBOutlet weak var UserName: UITextField!
     @IBOutlet weak var Password: UITextField!
-
-    var elementValue: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +29,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, XMLParserDeleg
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
         // Dispose of any resources that can be recreated.
     }
-    
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        self.view.endEditing(true)
-//        
-//        return true
-//    }
     
     @IBAction func Login(_ sender: Any) {
         let userName = "manager"
@@ -43,22 +40,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, XMLParserDeleg
 //        let userName = UserName.text!
 //        let password = Password.text!
         
-        let bodyString = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
-            "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" " +
-            "xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">" +
-            "<soap:Body>" +
-            "<GetTokenByUserNameAndPassword xmlns=\"http://test.freight-track.com/\">" +
-            "<userName>\(userName)</userName>" +
-            "<password>\(password)</password>" +
-            "</GetTokenByUserNameAndPassword>" +
-            "</soap:Body>" +
-        "</soap:Envelope>"
-        
-        var request = URLRequest(url: URL(string: "http://test.freight-track.com/WebService/Perkingopera.asmx")!)
-        request.httpMethod = "POST"
-        request.httpBody = bodyString.data(using: .utf8)
-        request.addValue("text/xml; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        request.addValue("http://test.freight-track.com/GetTokenByUserNameAndPassword", forHTTPHeaderField: "SOAPAction")
+        let parameters = "<userName>\(userName)</userName>"
+            + "<password>\(password)</password>"
+       
+        let request = SoapHelper.getURLRequest(method: soapMethod, parameters: parameters)
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
@@ -96,11 +81,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, XMLParserDeleg
                 self.performSegue(withIdentifier: "showMain", sender: nil)
             }
         }
+        
         task.resume()
     }
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
-        if elementName == "GetTokenByUserNameAndPasswordResult" {
+        if elementName == "\(soapMethod)Result" {
             elementValue = ""
         }
     }
@@ -110,7 +96,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, XMLParserDeleg
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        if elementName == "GetTokenByUserNameAndPasswordResult" {
+        if elementName == "\(soapMethod)Result" {
             print(elementValue ?? "Not got any data from ws.")
 
             let result = convertStringToDictionary(text: elementValue!)
@@ -137,4 +123,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate, XMLParserDeleg
         
         return nil
     }
+
 }

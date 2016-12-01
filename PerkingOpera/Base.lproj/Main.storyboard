@@ -93,12 +93,261 @@
                     <view key="view" contentMode="scaleToFill" id="vjV-Wv-yBB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="gPI-4N-vRV" userLabel="R-Todo Stack View">
+                                <rect key="frame" x="30" y="99" width="60" height="95.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBb-Y4-7Yf" customClass="RoundButton" customModule="PerkingOpera" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="G0e-hf-Eyf"/>
+                                            <constraint firstAttribute="height" constant="60" id="boC-lt-n8c"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                        <state key="normal" title="R-Todo" image="Flow"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="待审批申请单" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnJ-4O-Ze9">
+                                        <rect key="frame" x="0.0" y="62" width="60" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="KnJ-4O-Ze9" firstAttribute="width" secondItem="BBb-Y4-7Yf" secondAttribute="width" id="0P5-8s-ywJ"/>
+                                    <constraint firstItem="KnJ-4O-Ze9" firstAttribute="centerX" secondItem="BBb-Y4-7Yf" secondAttribute="centerX" id="eGd-81-3gu"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="QTA-Jd-OoL" userLabel="F-Request Stack View">
+                                <rect key="frame" x="130" y="99" width="60" height="95.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNz-e5-SqM" customClass="RoundButton" customModule="PerkingOpera" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="npB-4j-HQn"/>
+                                            <constraint firstAttribute="width" constant="60" id="qwX-Oh-nrZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                        <state key="normal" title="F-Request" image="Flow2_Inquiry"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="财务申请单" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jj-nv-d25">
+                                        <rect key="frame" x="0.0" y="62" width="60" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="9jj-nv-d25" firstAttribute="width" secondItem="oNz-e5-SqM" secondAttribute="width" id="AL1-k2-Zcb"/>
+                                    <constraint firstItem="9jj-nv-d25" firstAttribute="centerX" secondItem="oNz-e5-SqM" secondAttribute="centerX" id="lxj-eM-ghQ"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="WVK-bU-zFy" userLabel="G-Request Stack View">
+                                <rect key="frame" x="230" y="99" width="60" height="95.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G09-ly-LyQ" customClass="RoundButton" customModule="PerkingOpera" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="0se-3g-Krl"/>
+                                            <constraint firstAttribute="height" constant="60" id="B6l-aq-gji"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                        <state key="normal" title="G-Request" image="Flow_Inquiry"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一般申请单" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxM-pr-mAC">
+                                        <rect key="frame" x="0.0" y="62" width="60" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="DxM-pr-mAC" firstAttribute="width" secondItem="G09-ly-LyQ" secondAttribute="width" id="7hJ-lj-tgP"/>
+                                    <constraint firstItem="DxM-pr-mAC" firstAttribute="centerX" secondItem="G09-ly-LyQ" secondAttribute="centerX" id="hDK-JX-K2v"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="apy-SP-db2" userLabel="Gov-Todo Stack View">
+                                <rect key="frame" x="30" y="245" width="60" height="95.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofu-bs-ObY" customClass="RoundButton" customModule="PerkingOpera" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="54Y-wd-9vs"/>
+                                            <constraint firstAttribute="width" constant="60" id="yE1-Xh-uJi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                        <state key="normal" title="Gov-Todo" image="Gov_Inquiry"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="待处理公文" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIt-6N-msb">
+                                        <rect key="frame" x="0.0" y="62" width="60" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="kIt-6N-msb" firstAttribute="width" secondItem="ofu-bs-ObY" secondAttribute="width" id="jOk-go-SEN"/>
+                                    <constraint firstItem="kIt-6N-msb" firstAttribute="centerX" secondItem="ofu-bs-ObY" secondAttribute="centerX" id="lau-C2-hhJ"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="pfK-Ba-wit" userLabel="Doc Stack View">
+                                <rect key="frame" x="130" y="245" width="60" height="79"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3b2-Aq-XcX" customClass="RoundButton" customModule="PerkingOpera" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="Rkh-pL-FpU"/>
+                                            <constraint firstAttribute="height" constant="60" id="mKe-qu-uCz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                        <state key="normal" title="Doc" image="Doc_Inquiry"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公文" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Za-WM-aer">
+                                        <rect key="frame" x="0.0" y="62" width="60" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="3Za-WM-aer" firstAttribute="width" secondItem="3b2-Aq-XcX" secondAttribute="width" id="KZ3-qz-ag4"/>
+                                    <constraint firstItem="3Za-WM-aer" firstAttribute="centerX" secondItem="3b2-Aq-XcX" secondAttribute="centerX" id="pnC-Ot-PVS"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="QJO-Op-If9" userLabel="Reimburse Stack View">
+                                <rect key="frame" x="230" y="245" width="60" height="95.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vQ-JM-MJM" customClass="RoundButton" customModule="PerkingOpera" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="htW-r8-BK9"/>
+                                            <constraint firstAttribute="height" constant="60" id="lhw-ym-8rR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                        <state key="normal" title="Reimburse" image="Reimburse_Request"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="财务报销申请" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nr-wY-6gZ">
+                                        <rect key="frame" x="0.0" y="62" width="60" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="7nr-wY-6gZ" firstAttribute="centerX" secondItem="5vQ-JM-MJM" secondAttribute="centerX" id="Dup-dA-Hah"/>
+                                    <constraint firstItem="7nr-wY-6gZ" firstAttribute="width" secondItem="5vQ-JM-MJM" secondAttribute="width" id="TgJ-Y9-r7P"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="6EU-g4-zEY" userLabel="Notice Stack View">
+                                <rect key="frame" x="30" y="374" width="60" height="79"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aR-8b-a5c" customClass="RoundButton" customModule="PerkingOpera" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="5Ko-Az-mbL"/>
+                                            <constraint firstAttribute="width" constant="60" id="WZ0-Y7-1cB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                        <state key="normal" title="Notice" image="Notice"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="资讯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UkL-Kg-Jeu">
+                                        <rect key="frame" x="0.0" y="62" width="60" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="UkL-Kg-Jeu" firstAttribute="width" secondItem="8aR-8b-a5c" secondAttribute="width" id="gZL-cl-hg4"/>
+                                    <constraint firstItem="UkL-Kg-Jeu" firstAttribute="centerX" secondItem="8aR-8b-a5c" secondAttribute="centerX" id="iGL-f7-Tdg"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="juC-Rf-Vj9" userLabel="Mail Stack View">
+                                <rect key="frame" x="130" y="374" width="60" height="79"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NhA-kn-yNm" customClass="RoundButton" customModule="PerkingOpera" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="LiY-ZP-IGZ"/>
+                                            <constraint firstAttribute="height" constant="60" id="wxm-e3-vdx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                        <state key="normal" title="Mail" image="Mail"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邮件" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7P-dj-smt">
+                                        <rect key="frame" x="0.0" y="62" width="60" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="W7P-dj-smt" firstAttribute="width" secondItem="NhA-kn-yNm" secondAttribute="width" id="wpB-O4-pn0"/>
+                                    <constraint firstItem="W7P-dj-smt" firstAttribute="centerX" secondItem="NhA-kn-yNm" secondAttribute="centerX" id="xe1-Fc-SKx"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="1Vl-lc-tJt" userLabel="Calendar Stack View">
+                                <rect key="frame" x="230" y="374" width="60" height="79"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cY-nt-boF" customClass="RoundButton" customModule="PerkingOpera" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="KqV-3h-hN4"/>
+                                            <constraint firstAttribute="height" constant="60" id="bmf-oM-okZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                        <state key="normal" title="Calendar" image="CalendarImage"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日程表" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opJ-2O-Jn7">
+                                        <rect key="frame" x="0.0" y="62" width="60" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="opJ-2O-Jn7" firstAttribute="width" secondItem="1cY-nt-boF" secondAttribute="width" id="bqH-DE-MMA"/>
+                                    <constraint firstItem="opJ-2O-Jn7" firstAttribute="centerX" secondItem="1cY-nt-boF" secondAttribute="centerX" id="mxQ-Uq-WqW"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WVK-bU-zFy" firstAttribute="leading" secondItem="QJO-Op-If9" secondAttribute="leading" id="1nt-3D-puS"/>
+                            <constraint firstItem="gPI-4N-vRV" firstAttribute="top" secondItem="QTA-Jd-OoL" secondAttribute="top" id="2Ci-Di-tab"/>
+                            <constraint firstItem="pfK-Ba-wit" firstAttribute="top" secondItem="QTA-Jd-OoL" secondAttribute="bottom" constant="50" id="770-wz-c6U"/>
+                            <constraint firstItem="pfK-Ba-wit" firstAttribute="centerX" secondItem="vjV-Wv-yBB" secondAttribute="centerX" id="8MS-8x-a0G"/>
+                            <constraint firstItem="pfK-Ba-wit" firstAttribute="centerY" secondItem="vjV-Wv-yBB" secondAttribute="centerY" id="DEc-b3-WV3"/>
+                            <constraint firstItem="apy-SP-db2" firstAttribute="top" secondItem="pfK-Ba-wit" secondAttribute="top" id="Fiy-eK-NkK"/>
+                            <constraint firstItem="1Vl-lc-tJt" firstAttribute="top" secondItem="juC-Rf-Vj9" secondAttribute="top" id="JgX-WQ-MgS"/>
+                            <constraint firstItem="6EU-g4-zEY" firstAttribute="leading" secondItem="apy-SP-db2" secondAttribute="leading" id="N1o-WK-eXf"/>
+                            <constraint firstItem="QJO-Op-If9" firstAttribute="leading" secondItem="pfK-Ba-wit" secondAttribute="trailing" constant="40" id="U2p-J3-5YM"/>
+                            <constraint firstItem="juC-Rf-Vj9" firstAttribute="top" secondItem="pfK-Ba-wit" secondAttribute="bottom" constant="50" id="ZTb-oq-uhf"/>
+                            <constraint firstItem="QJO-Op-If9" firstAttribute="top" secondItem="pfK-Ba-wit" secondAttribute="top" id="bog-Sn-NU8"/>
+                            <constraint firstItem="pfK-Ba-wit" firstAttribute="leading" secondItem="apy-SP-db2" secondAttribute="trailing" constant="40" id="ddz-Dh-API"/>
+                            <constraint firstItem="1Vl-lc-tJt" firstAttribute="leading" secondItem="QJO-Op-If9" secondAttribute="leading" id="dvc-os-8mH"/>
+                            <constraint firstItem="6EU-g4-zEY" firstAttribute="top" secondItem="juC-Rf-Vj9" secondAttribute="top" id="emK-Zi-sc6"/>
+                            <constraint firstItem="QTA-Jd-OoL" firstAttribute="centerX" secondItem="pfK-Ba-wit" secondAttribute="centerX" id="gxF-2Y-SP9"/>
+                            <constraint firstItem="gPI-4N-vRV" firstAttribute="leading" secondItem="apy-SP-db2" secondAttribute="leading" id="hmJ-Zt-F60"/>
+                            <constraint firstItem="juC-Rf-Vj9" firstAttribute="centerX" secondItem="pfK-Ba-wit" secondAttribute="centerX" id="noy-te-x5T"/>
+                            <constraint firstItem="WVK-bU-zFy" firstAttribute="top" secondItem="QTA-Jd-OoL" secondAttribute="top" id="pHm-Kq-Lmf"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T4o-tK-biW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="791" y="121"/>
+            <point key="canvasLocation" x="1067" y="108"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="CalendarImage" width="120" height="120"/>
+        <image name="Doc_Inquiry" width="120" height="120"/>
+        <image name="Flow" width="120" height="120"/>
+        <image name="Flow2_Inquiry" width="120" height="120"/>
+        <image name="Flow_Inquiry" width="120" height="120"/>
+        <image name="Gov_Inquiry" width="120" height="120"/>
+        <image name="Mail" width="58" height="58"/>
+        <image name="Notice" width="72" height="72"/>
+        <image name="Reimburse_Request" width="45" height="45"/>
+    </resources>
 </document>

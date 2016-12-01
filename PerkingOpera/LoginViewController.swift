@@ -38,11 +38,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, XMLParserDeleg
 //    }
     
     @IBAction func Login(_ sender: Any) {
-//        let userName = "manager"
-//        let password = "1234567"
+        let userName = "manager"
+        let password = "123456"
         
-        let userName = UserName.text!
-        let password = Password.text!
+//        let userName = UserName.text!
+//        let password = Password.text!
         
         let bodyString = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
             "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" " +

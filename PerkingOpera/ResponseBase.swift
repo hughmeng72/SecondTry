@@ -24,7 +24,6 @@ struct ResponseBase : Glossy {
         self.result = result
         self.errorInfo = errorInfo
     }
-
     
     // MARK: - Serialization
     

@@ -15,7 +15,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, XMLParserDeleg
     @IBOutlet weak var Password: UITextField!
 
     var elementValue: String?
-    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,20 +75,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate, XMLParserDeleg
             
             // if we've gotten here, update the UI
             DispatchQueue.main.async {
-                if let user2 = self.user, user2.error.result != 1 {
-                    let controller = UIAlertController(
-                        title: self.user!.error.errorInfo,
-                        message: "", preferredStyle: .alert)
-                    
-                    let cancelAction = UIAlertAction(
-                        title: "Ok",
-                        style: .cancel, handler: nil)
-                    
-                    controller.addAction(cancelAction)
-                    
-                    self.present(controller, animated: true, completion: nil)
-                    
-                    return
+                guard let user = Repository.sharedInstance.user,
+                    user.error.result == 1
+                    else {
+                        let controller = UIAlertController(
+                            title: "用户名或密码错误",
+                            message: "", preferredStyle: .alert)
+                        
+                        let cancelAction = UIAlertAction(
+                            title: "Ok",
+                            style: .cancel, handler: nil)
+                        
+                        controller.addAction(cancelAction)
+                        
+                        self.present(controller, animated: true, completion: nil)
+                        
+                        return
                 }
                 
                 self.performSegue(withIdentifier: "showMain", sender: nil)
@@ -119,7 +120,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, XMLParserDeleg
                 return
             }
             
-            self.user = user;
+            Repository.sharedInstance.user = user;
             
             elementValue = nil;
         }

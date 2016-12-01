@@ -1,21 +1,19 @@
 //
-//  MainViewController.swift
+//  NoticeViewController.swift
 //  PerkingOpera
 //
-//  Created by admin on 29/11/2016.
+//  Created by admin on 01/12/2016.
 //  Copyright © 2016 Wayne Meng. All rights reserved.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
+class NoticeViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let user = Repository.sharedInstance.user
-        print(user?.token ?? "Unknown User")
     }
 
     override func didReceiveMemoryWarning() {

@@ -17,11 +17,32 @@ class NoticeViewController: UITableViewController, XMLParserDelegate {
     
     var list: [Notice] = []
     
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list.count
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Create an instance of UITableViewCell, with default appearance
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        
+        // Set the text on the cell with the description of the item
+        // that is at the nth index of items, where n = row this cell
+        // will appear in on the tableview
+        let item = list[indexPath.row]
+        
+        cell.textLabel?.text = item.title
+        cell.detailTextLabel?.text = item.addTime
+        
+        return cell
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Get the height of the status bar
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height + 8
         
         let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
         tableView.contentInset = insets
@@ -44,6 +65,27 @@ class NoticeViewController: UITableViewController, XMLParserDelegate {
             guard parser.parse() else {
                 print("parsing error: \(parser.parserError)")
                 return
+            }
+        
+            // if we've gotten here, update the UI
+            DispatchQueue.main.async {
+                if self.list.count == 0 {
+                        let controller = UIAlertController(
+                            title: "没有检索到相关数据",
+                            message: "", preferredStyle: .alert)
+                        
+                        let cancelAction = UIAlertAction(
+                            title: "Ok",
+                            style: .cancel, handler: nil)
+                        
+                        controller.addAction(cancelAction)
+                        
+                        self.present(controller, animated: true, completion: nil)
+                        
+                        return
+                }
+                
+                self.tableView.reloadData()
             }
         }
         

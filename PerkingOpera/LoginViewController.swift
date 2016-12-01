@@ -17,8 +17,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, XMLParserDeleg
     var elementValue: String?
     var user: User?
     
-    @IBOutlet weak var button: RoundButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -90,7 +88,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, XMLParserDeleg
                     controller.addAction(cancelAction)
                     
                     self.present(controller, animated: true, completion: nil)
+                    
+                    return
                 }
+                
+                self.performSegue(withIdentifier: "showMain", sender: nil)
             }
         }
         task.resume()
@@ -134,16 +136,4 @@ class LoginViewController: UIViewController, UITextFieldDelegate, XMLParserDeleg
         
         return nil
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

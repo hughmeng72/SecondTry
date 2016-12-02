@@ -24,17 +24,13 @@ class NoticeViewController: UITableViewController, XMLParserDelegate {
     
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Create an instance of UITableViewCell, with default appearance
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        
-        // Set the text on the cell with the description of the item
-        // that is at the nth index of items, where n = row this cell
-        // will appear in on the tableview
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         let item = list[indexPath.row]
         
-        cell.textLabel?.text = item.title
-        cell.detailTextLabel?.text = item.addTime
-        
+        cell.subjectLabel.text = item.title
+        cell.categoryLabel.text = item.typeName
+        cell.timeLabel.text = item.addTime
+       
         return cell
     }
     
@@ -47,8 +43,10 @@ class NoticeViewController: UITableViewController, XMLParserDelegate {
         let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
-
         
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 48
+       
         let user = Repository.sharedInstance.user
         let parameters = "<token>\(user?.token)</token>"
         

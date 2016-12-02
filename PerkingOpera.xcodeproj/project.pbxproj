@@ -30,6 +30,7 @@
 		84BDDD481DEB46970075ECAB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDDD471DEB46970075ECAB /* LoginViewController.swift */; };
 		84C2D8591DF1E1AF000EAD22 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2D8581DF1E1AF000EAD22 /* Calendar.swift */; };
 		84C2D85B1DF1E323000EAD22 /* CalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2D85A1DF1E323000EAD22 /* CalendarTableViewController.swift */; };
+		84C2D85D1DF1EBE3000EAD22 /* ShowPlanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2D85C1DF1EBE3000EAD22 /* ShowPlanTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,6 +71,7 @@
 		84BDDD471DEB46970075ECAB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		84C2D8581DF1E1AF000EAD22 /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		84C2D85A1DF1E323000EAD22 /* CalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewController.swift; sourceTree = "<group>"; };
+		84C2D85C1DF1EBE3000EAD22 /* ShowPlanTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowPlanTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				8405C1E81DF1C9C000CB3B2D /* MailTableViewController.swift */,
 				84C2D85A1DF1E323000EAD22 /* CalendarTableViewController.swift */,
+				84C2D85C1DF1EBE3000EAD22 /* ShowPlanTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				841F7F801DF19823007D6F1C /* ItemCell.swift in Sources */,
 				841F4E201DEDD275009032FB /* RoundButton.swift in Sources */,
 				84C2D8591DF1E1AF000EAD22 /* Calendar.swift in Sources */,
+				84C2D85D1DF1EBE3000EAD22 /* ShowPlanTableViewController.swift in Sources */,
 				84A9DFF51DF076C700E576D3 /* Notice.swift in Sources */,
 				84BDDD481DEB46970075ECAB /* LoginViewController.swift in Sources */,
 				8405C1E71DF1C53400CB3B2D /* Mail.swift in Sources */,

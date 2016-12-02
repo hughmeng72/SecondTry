@@ -57,7 +57,8 @@ class MainViewController: UIViewController {
 
     
     @IBAction func showCalendarList(_ sender: Any) {
-        self.performSegue(withIdentifier: "showCalendarList", sender: nil)
+//        self.performSegue(withIdentifier: "showCalendarList", sender: nil)
+        self.performSegue(withIdentifier: "showPlanList", sender: nil)
     }
     
     

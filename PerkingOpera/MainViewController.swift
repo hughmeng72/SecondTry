@@ -23,9 +23,44 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func showRequestToDoList(_ sender: Any) {
+        self.performSegue(withIdentifier: "showRequestToDoList", sender: nil)
+    }
+
+    @IBAction func showFinanceRequestList(_ sender: Any) {
+        self.performSegue(withIdentifier: "showFinanceRequestList", sender: nil)
+    }
+    
+    @IBAction func showGeneralRequestList(_ sender: Any) {
+        self.performSegue(withIdentifier: "showGeneralRequestList", sender: nil)
+    }
+
+    @IBAction func showGovToDoList(_ sender: Any) {
+        self.performSegue(withIdentifier: "showGovToDoList", sender: nil)
+    }
+    
+    @IBAction func showDocList(_ sender: Any) {
+        self.performSegue(withIdentifier: "showDocList", sender: nil)
+    }
+    
+    @IBAction func showReimburseRequest(_ sender: Any) {
+        self.performSegue(withIdentifier: "showReimburseRequest", sender: nil)
+    }
+    
     @IBAction func showNoticeList(_ sender: Any) {
         self.performSegue(withIdentifier: "showNoticeList", sender: nil)
     }
+    
+    @IBAction func showMailList(_ sender: Any) {
+        self.performSegue(withIdentifier: "showMailList", sender: nil)
+    }
+
+    
+    @IBAction func showCalendarList(_ sender: Any) {
+        self.performSegue(withIdentifier: "showCalendarList", sender: nil)
+    }
+    
+    
     
     /*
     // MARK: - Navigation

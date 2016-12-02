@@ -81,6 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="459" y="-462"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="Gpu-7x-eIO">
@@ -105,6 +106,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                         <state key="normal" title="R-Todo" image="Flow"/>
+                                        <connections>
+                                            <action selector="showRequestToDoList:" destination="UzN-BA-mdB" eventType="touchUpInside" id="IOt-Uy-2a1"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="待审批申请单" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnJ-4O-Ze9">
                                         <rect key="frame" x="0.0" y="62" width="60" height="33.5"/>
@@ -129,6 +133,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                         <state key="normal" title="F-Request" image="Flow2_Inquiry"/>
+                                        <connections>
+                                            <action selector="showFinanceRequestList:" destination="UzN-BA-mdB" eventType="touchUpInside" id="1TU-gw-epQ"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="财务申请单" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jj-nv-d25">
                                         <rect key="frame" x="0.0" y="62" width="60" height="33.5"/>
@@ -153,6 +160,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                         <state key="normal" title="G-Request" image="Flow_Inquiry"/>
+                                        <connections>
+                                            <action selector="showGeneralRequestList:" destination="UzN-BA-mdB" eventType="touchUpInside" id="pSu-8j-fwF"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一般申请单" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxM-pr-mAC">
                                         <rect key="frame" x="0.0" y="62" width="60" height="33.5"/>
@@ -177,6 +187,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                         <state key="normal" title="Gov-Todo" image="Gov_Inquiry"/>
+                                        <connections>
+                                            <action selector="showGovToDoList:" destination="UzN-BA-mdB" eventType="touchUpInside" id="Rp5-BP-vTz"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="待处理公文" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIt-6N-msb">
                                         <rect key="frame" x="0.0" y="62" width="60" height="33.5"/>
@@ -201,6 +214,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                         <state key="normal" title="Doc" image="Doc_Inquiry"/>
+                                        <connections>
+                                            <action selector="showDocList:" destination="UzN-BA-mdB" eventType="touchUpInside" id="KIc-Ma-cYw"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公文" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Za-WM-aer">
                                         <rect key="frame" x="0.0" y="62" width="60" height="17"/>
@@ -225,6 +241,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                         <state key="normal" title="Reimburse" image="Reimburse_Request"/>
+                                        <connections>
+                                            <action selector="showReimburseRequest:" destination="UzN-BA-mdB" eventType="touchUpInside" id="cQE-iT-JjZ"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="财务报销申请" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nr-wY-6gZ">
                                         <rect key="frame" x="0.0" y="62" width="60" height="33.5"/>
@@ -276,6 +295,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                         <state key="normal" title="Mail" image="Mail"/>
+                                        <connections>
+                                            <action selector="showMailList:" destination="UzN-BA-mdB" eventType="touchUpInside" id="VxI-kc-fR4"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邮件" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7P-dj-smt">
                                         <rect key="frame" x="0.0" y="62" width="60" height="17"/>
@@ -300,6 +322,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                         <state key="normal" title="Calendar" image="CalendarImage"/>
+                                        <connections>
+                                            <action selector="showCalendarList:" destination="UzN-BA-mdB" eventType="touchUpInside" id="euf-1C-ptg"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日程表" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opJ-2O-Jn7">
                                         <rect key="frame" x="0.0" y="62" width="60" height="17"/>
@@ -339,11 +364,12 @@
                     <navigationItem key="navigationItem" id="0Fm-IP-wDU"/>
                     <connections>
                         <segue destination="CHm-lN-etL" kind="show" identifier="showNoticeList" id="HCP-3A-xIl"/>
+                        <segue destination="kO6-k1-6WL" kind="show" identifier="showMailList" id="YOo-73-w8F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T4o-tK-biW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2064.375" y="107.74647887323944"/>
+            <point key="canvasLocation" x="1086" y="436"/>
         </scene>
         <!--Notice View Controller-->
         <scene sceneID="pxj-pY-VmH">
@@ -358,7 +384,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jwn-Gk-OLs" id="XTP-Cs-tV8">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0K1-9Q-UGc">
@@ -406,7 +432,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LPe-HA-kgg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2850" y="107.74647887323944"/>
+            <point key="canvasLocation" x="2235" y="243"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dM9-A7-C4S">
@@ -424,7 +450,70 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHA-xQ-0gE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066.875" y="107.74647887323944"/>
+            <point key="canvasLocation" x="1869" y="-463"/>
+        </scene>
+        <!--Mail Table View Controller-->
+        <scene sceneID="n81-Sp-ymR">
+            <objects>
+                <tableViewController id="kO6-k1-6WL" customClass="MailTableViewController" customModule="PerkingOpera" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nty-tb-I3l">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" id="fL0-lq-Kw0" customClass="ItemCell" customModule="PerkingOpera" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fL0-lq-Kw0" id="QO9-hU-LQs">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vh-04-ZQT">
+                                            <rect key="frame" x="0.0" y="3" width="320" height="16"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3g-GR-2wh">
+                                            <rect key="frame" x="0.0" y="27" width="31" height="14.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIK-vz-hdo">
+                                            <rect key="frame" x="289" y="27" width="31" height="14.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="7Vh-04-ZQT" firstAttribute="top" secondItem="QO9-hU-LQs" secondAttribute="top" constant="3" id="Hgt-Wf-VGS"/>
+                                        <constraint firstItem="H3g-GR-2wh" firstAttribute="top" secondItem="7Vh-04-ZQT" secondAttribute="bottom" constant="8" id="IO8-bT-zVr"/>
+                                        <constraint firstAttribute="trailing" secondItem="7Vh-04-ZQT" secondAttribute="trailing" id="JPc-Xe-GHN"/>
+                                        <constraint firstAttribute="bottom" secondItem="H3g-GR-2wh" secondAttribute="bottom" constant="2" id="Zgj-uk-S0t"/>
+                                        <constraint firstItem="7Vh-04-ZQT" firstAttribute="leading" secondItem="QO9-hU-LQs" secondAttribute="leading" id="hqL-jL-vBl"/>
+                                        <constraint firstItem="H3g-GR-2wh" firstAttribute="leading" secondItem="QO9-hU-LQs" secondAttribute="leading" id="mzt-of-KkZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="mIK-vz-hdo" secondAttribute="trailing" id="okY-4w-Tiu"/>
+                                        <constraint firstItem="mIK-vz-hdo" firstAttribute="baseline" secondItem="H3g-GR-2wh" secondAttribute="baseline" id="sSg-PO-8jP"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="CategoryLabel" destination="H3g-GR-2wh" id="ae7-Be-eqx"/>
+                                    <outlet property="SubjectLabel" destination="7Vh-04-ZQT" id="aUc-Sh-qfz"/>
+                                    <outlet property="TimeLabel" destination="mIK-vz-hdo" id="SKG-aZ-YKD"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kO6-k1-6WL" id="v8N-G4-jqB"/>
+                            <outlet property="delegate" destination="kO6-k1-6WL" id="I2w-eX-bWW"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="02L-bJ-G6p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-73" y="244"/>
         </scene>
     </scenes>
     <resources>

@@ -8,7 +8,7 @@
 
 import Gloss
 
-struct Notice : Glossy {
+struct Notice: Glossy {
     let id: Int
     let typeName: String
     let title: String

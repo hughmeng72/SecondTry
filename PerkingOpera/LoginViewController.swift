@@ -34,7 +34,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, XMLParserDeleg
     }
     
     @IBAction func Login(_ sender: Any) {
-        let userName = "manager"
+        let userName = "chengfq"
         let password = "123456"
         
 //        let userName = UserName.text!

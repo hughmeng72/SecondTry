@@ -31,6 +31,9 @@
 		84C2D8591DF1E1AF000EAD22 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2D8581DF1E1AF000EAD22 /* Calendar.swift */; };
 		84C2D85B1DF1E323000EAD22 /* CalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2D85A1DF1E323000EAD22 /* CalendarTableViewController.swift */; };
 		84C2D85D1DF1EBE3000EAD22 /* ShowPlanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2D85C1DF1EBE3000EAD22 /* ShowPlanTableViewController.swift */; };
+		84C2D85F1DF1F0C8000EAD22 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2D85E1DF1F0C8000EAD22 /* Flow.swift */; };
+		84C2D8611DF1F161000EAD22 /* FlowStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2D8601DF1F161000EAD22 /* FlowStep.swift */; };
+		84C2D8631DF1F422000EAD22 /* FlowProcurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2D8621DF1F422000EAD22 /* FlowProcurement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -72,6 +75,9 @@
 		84C2D8581DF1E1AF000EAD22 /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		84C2D85A1DF1E323000EAD22 /* CalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewController.swift; sourceTree = "<group>"; };
 		84C2D85C1DF1EBE3000EAD22 /* ShowPlanTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowPlanTableViewController.swift; sourceTree = "<group>"; };
+		84C2D85E1DF1F0C8000EAD22 /* Flow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
+		84C2D8601DF1F161000EAD22 /* FlowStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowStep.swift; sourceTree = "<group>"; };
+		84C2D8621DF1F422000EAD22 /* FlowProcurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowProcurement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,9 @@
 			children = (
 				8405C1E61DF1C53400CB3B2D /* Mail.swift */,
 				84C2D8581DF1E1AF000EAD22 /* Calendar.swift */,
+				84C2D85E1DF1F0C8000EAD22 /* Flow.swift */,
+				84C2D8601DF1F161000EAD22 /* FlowStep.swift */,
+				84C2D8621DF1F422000EAD22 /* FlowProcurement.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -240,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8405C1E91DF1C9C000CB3B2D /* MailTableViewController.swift in Sources */,
+				84C2D85F1DF1F0C8000EAD22 /* Flow.swift in Sources */,
 				84C2D85B1DF1E323000EAD22 /* CalendarTableViewController.swift in Sources */,
 				841F7F801DF19823007D6F1C /* ItemCell.swift in Sources */,
 				841F4E201DEDD275009032FB /* RoundButton.swift in Sources */,
@@ -251,9 +261,11 @@
 				84197E461DEC72DD003FA7E5 /* ResponseBase.swift in Sources */,
 				84A9DFF71DF0799E00E576D3 /* FlowDoc.swift in Sources */,
 				84A9DFF31DF0466800E576D3 /* NoticeViewController.swift in Sources */,
+				84C2D8611DF1F161000EAD22 /* FlowStep.swift in Sources */,
 				84BDDD191DEB3D8B0075ECAB /* AppDelegate.swift in Sources */,
 				84A9DFF91DF0831C00E576D3 /* Repository.swift in Sources */,
 				84A9DFFB1DF08D3D00E576D3 /* SoapHelper.swift in Sources */,
+				84C2D8631DF1F422000EAD22 /* FlowProcurement.swift in Sources */,
 				84A9DFFD1DF09DA100E576D3 /* ResponseResult.swift in Sources */,
 				84BDDD371DEB41580075ECAB /* User.swift in Sources */,
 				841F4E1E1DEDCCE1009032FB /* MainViewController.swift in Sources */,

@@ -118,7 +118,7 @@ class NoticeViewController: UITableViewController, XMLParserDelegate {
             let result = convertStringToDictionary(text: elementValue!)
             print(result ?? "Not got any data from ws.")
             
-            guard let resultObject = ResponseResult<Notice>(json: result!) else {
+            guard let resultObject = ResponseResultList<Notice>(json: result!) else {
                 print("DECODING FAILURE :(")
                 return
             }

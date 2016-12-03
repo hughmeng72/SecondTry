@@ -117,7 +117,7 @@ class FlowGeneralTableViewController: UITableViewController, XMLParserDelegate {
             let result = convertStringToDictionary(text: elementValue!)
             print(result ?? "Not got any data from ws.")
             
-            guard let resultObject = ResponseResult<Flow>(json: result!) else {
+            guard let resultObject = ResponseResultList<Flow>(json: result!) else {
                 print("DECODING FAILURE :(")
                 return
             }

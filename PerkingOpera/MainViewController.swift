@@ -44,7 +44,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func showReimburseRequest(_ sender: Any) {
-        self.performSegue(withIdentifier: "showReimburseRequest", sender: nil)
+//        self.performSegue(withIdentifier: "showReimburseRequest", sender: nil)
     }
     
     @IBAction func showNoticeList(_ sender: Any) {

@@ -124,7 +124,7 @@ class CalendarTableViewController: UITableViewController, XMLParserDelegate {
             let result = convertStringToDictionary(text: elementValue!)
             print(result ?? "Not got any data from ws.")
             
-            guard let resultObject = ResponseResult<Calendar>(json: result!) else {
+            guard let resultObject = ResponseResultList<Calendar>(json: result!) else {
                 print("DECODING FAILURE :(")
                 return
             }

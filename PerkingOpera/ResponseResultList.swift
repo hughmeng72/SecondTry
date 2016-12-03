@@ -8,7 +8,7 @@
 
 import Gloss
 
-struct ResponseResult<T : Decodable> : Glossy {
+struct ResponseResultList<T : Decodable> : Glossy {
     
     let list: [T]
     let error: ResponseBase

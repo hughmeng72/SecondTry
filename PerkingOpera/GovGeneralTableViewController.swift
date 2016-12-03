@@ -117,7 +117,7 @@ class GovGeneralTableViewController: UITableViewController, XMLParserDelegate {
             let result = convertStringToDictionary(text: elementValue!)
             print(result ?? "Not got any data from ws.")
             
-            guard let resultObject = ResponseResult<Gov>(json: result!) else {
+            guard let resultObject = ResponseResultList<Gov>(json: result!) else {
                 print("DECODING FAILURE :(")
                 return
             }

@@ -20,7 +20,7 @@
 		84A9DFF71DF0799E00E576D3 /* FlowDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A9DFF61DF0799E00E576D3 /* FlowDoc.swift */; };
 		84A9DFF91DF0831C00E576D3 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A9DFF81DF0831C00E576D3 /* Repository.swift */; };
 		84A9DFFB1DF08D3D00E576D3 /* SoapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A9DFFA1DF08D3D00E576D3 /* SoapHelper.swift */; };
-		84A9DFFD1DF09DA100E576D3 /* ResponseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A9DFFC1DF09DA100E576D3 /* ResponseResult.swift */; };
+		84A9DFFD1DF09DA100E576D3 /* ResponseResultList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A9DFFC1DF09DA100E576D3 /* ResponseResultList.swift */; };
 		84B236031DF309E000886E50 /* Gov.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B236021DF309E000886E50 /* Gov.swift */; };
 		84B236051DF30B1800886E50 /* GovTodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B236041DF30B1800886E50 /* GovTodoTableViewController.swift */; };
 		84B236071DF30D4800886E50 /* GovGeneralTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B236061DF30D4800886E50 /* GovGeneralTableViewController.swift */; };
@@ -71,7 +71,7 @@
 		84A9DFF61DF0799E00E576D3 /* FlowDoc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowDoc.swift; sourceTree = "<group>"; };
 		84A9DFF81DF0831C00E576D3 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		84A9DFFA1DF08D3D00E576D3 /* SoapHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoapHelper.swift; sourceTree = "<group>"; };
-		84A9DFFC1DF09DA100E576D3 /* ResponseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseResult.swift; sourceTree = "<group>"; };
+		84A9DFFC1DF09DA100E576D3 /* ResponseResultList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseResultList.swift; sourceTree = "<group>"; };
 		84B236021DF309E000886E50 /* Gov.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gov.swift; sourceTree = "<group>"; };
 		84B236041DF30B1800886E50 /* GovTodoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GovTodoTableViewController.swift; sourceTree = "<group>"; };
 		84B236061DF30D4800886E50 /* GovGeneralTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GovGeneralTableViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +116,11 @@
 				84C2D8601DF1F161000EAD22 /* FlowStep.swift */,
 				84C2D8621DF1F422000EAD22 /* FlowProcurement.swift */,
 				84B236021DF309E000886E50 /* Gov.swift */,
+				84BDDD361DEB41580075ECAB /* User.swift */,
+				84197E451DEC72DD003FA7E5 /* ResponseBase.swift */,
+				84A9DFF41DF076C700E576D3 /* Notice.swift */,
+				84A9DFF61DF0799E00E576D3 /* FlowDoc.swift */,
+				84A9DFFC1DF09DA100E576D3 /* ResponseResultList.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -123,7 +128,9 @@
 		8405C1E41DF1C51000CB3B2D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				841F7F7F1DF19823007D6F1C /* ItemCell.swift */,
 				843D65061DF279E300798F50 /* Item2Cell.swift */,
+				841F4E1F1DEDD275009032FB /* RoundButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -131,6 +138,8 @@
 		8405C1E51DF1C51A00CB3B2D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				841F4E1D1DEDCCE1009032FB /* MainViewController.swift */,
+				84A9DFF21DF0466800E576D3 /* NoticeViewController.swift */,
 				8405C1E81DF1C9C000CB3B2D /* MailTableViewController.swift */,
 				84C2D85A1DF1E323000EAD22 /* CalendarTableViewController.swift */,
 				84C2D85C1DF1EBE3000EAD22 /* ShowPlanTableViewController.swift */,
@@ -142,6 +151,15 @@
 				84BDDD471DEB46970075ECAB /* LoginViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		84B236081DF3253A00886E50 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				84A9DFFA1DF08D3D00E576D3 /* SoapHelper.swift */,
+				84A9DFF81DF0831C00E576D3 /* Repository.swift */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 		84BDDD0C1DEB3D8B0075ECAB = {
@@ -164,25 +182,15 @@
 		84BDDD171DEB3D8B0075ECAB /* PerkingOpera */ = {
 			isa = PBXGroup;
 			children = (
+				84B236081DF3253A00886E50 /* Helper */,
 				8405C1E51DF1C51A00CB3B2D /* Controller */,
 				8405C1E41DF1C51000CB3B2D /* View */,
 				8405C1E31DF1C3DF00CB3B2D /* Model */,
-				841F4E1F1DEDD275009032FB /* RoundButton.swift */,
-				841F4E1D1DEDCCE1009032FB /* MainViewController.swift */,
 				84BDDD181DEB3D8B0075ECAB /* AppDelegate.swift */,
 				84BDDD1C1DEB3D8B0075ECAB /* Main.storyboard */,
 				84BDDD1F1DEB3D8B0075ECAB /* Assets.xcassets */,
 				84BDDD211DEB3D8B0075ECAB /* LaunchScreen.storyboard */,
 				84BDDD241DEB3D8B0075ECAB /* Info.plist */,
-				84BDDD361DEB41580075ECAB /* User.swift */,
-				84197E451DEC72DD003FA7E5 /* ResponseBase.swift */,
-				84A9DFF21DF0466800E576D3 /* NoticeViewController.swift */,
-				84A9DFF41DF076C700E576D3 /* Notice.swift */,
-				84A9DFF61DF0799E00E576D3 /* FlowDoc.swift */,
-				84A9DFF81DF0831C00E576D3 /* Repository.swift */,
-				84A9DFFA1DF08D3D00E576D3 /* SoapHelper.swift */,
-				84A9DFFC1DF09DA100E576D3 /* ResponseResult.swift */,
-				841F7F7F1DF19823007D6F1C /* ItemCell.swift */,
 			);
 			path = PerkingOpera;
 			sourceTree = "<group>";
@@ -293,7 +301,7 @@
 				84A9DFF91DF0831C00E576D3 /* Repository.swift in Sources */,
 				84A9DFFB1DF08D3D00E576D3 /* SoapHelper.swift in Sources */,
 				84C2D8631DF1F422000EAD22 /* FlowProcurement.swift in Sources */,
-				84A9DFFD1DF09DA100E576D3 /* ResponseResult.swift in Sources */,
+				84A9DFFD1DF09DA100E576D3 /* ResponseResultList.swift in Sources */,
 				84BDDD371DEB41580075ECAB /* User.swift in Sources */,
 				841F4E1E1DEDCCE1009032FB /* MainViewController.swift in Sources */,
 				84B236071DF30D4800886E50 /* GovGeneralTableViewController.swift in Sources */,

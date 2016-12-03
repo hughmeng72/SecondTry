@@ -91,7 +91,7 @@ class MailTableViewController: UITableViewController, XMLParserDelegate {
             let result = convertStringToDictionary(text: elementValue!)
             print(result ?? "Not got any data from ws.")
             
-            guard let resultObject = ResponseResult<Mail>(json: result!) else {
+            guard let resultObject = ResponseResultList<Mail>(json: result!) else {
                 print("DECODING FAILURE :(")
                 return
             }

@@ -139,6 +139,7 @@
 				84D1FB421DF2F4AA006FF427 /* FlowGeneralTableViewController.swift */,
 				84B236041DF30B1800886E50 /* GovTodoTableViewController.swift */,
 				84B236061DF30D4800886E50 /* GovGeneralTableViewController.swift */,
+				84BDDD471DEB46970075ECAB /* LoginViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -169,7 +170,6 @@
 				841F4E1F1DEDD275009032FB /* RoundButton.swift */,
 				841F4E1D1DEDCCE1009032FB /* MainViewController.swift */,
 				84BDDD181DEB3D8B0075ECAB /* AppDelegate.swift */,
-				84BDDD471DEB46970075ECAB /* LoginViewController.swift */,
 				84BDDD1C1DEB3D8B0075ECAB /* Main.storyboard */,
 				84BDDD1F1DEB3D8B0075ECAB /* Assets.xcassets */,
 				84BDDD211DEB3D8B0075ECAB /* LaunchScreen.storyboard */,

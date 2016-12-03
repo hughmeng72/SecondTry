@@ -24,8 +24,13 @@ class FlowToDoTableViewController: UITableViewController, XMLParserDelegate {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 48
         
-        let user = Repository.sharedInstance.user
-        let parameters = "<token>\(user?.token)</token>"
+        guard let user = Repository.sharedInstance.user
+            else {
+                print("Failed to get user object")
+                return
+        }
+
+        let parameters = "<token>\(user.token)</token>"
             + "<showPlan>false</showPlan>"
         
         let request = SoapHelper.getURLRequest(method: soapMethod, parameters: parameters)

@@ -37,6 +37,7 @@
 		84C2D8611DF1F161000EAD22 /* FlowStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2D8601DF1F161000EAD22 /* FlowStep.swift */; };
 		84C2D8631DF1F422000EAD22 /* FlowProcurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2D8621DF1F422000EAD22 /* FlowProcurement.swift */; };
 		84D1FB411DF2ECBD006FF427 /* FlowFinanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1FB401DF2ECBD006FF427 /* FlowFinanceTableViewController.swift */; };
+		84D1FB431DF2F4AA006FF427 /* FlowGeneralTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1FB421DF2F4AA006FF427 /* FlowGeneralTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -84,6 +85,7 @@
 		84C2D8601DF1F161000EAD22 /* FlowStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowStep.swift; sourceTree = "<group>"; };
 		84C2D8621DF1F422000EAD22 /* FlowProcurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowProcurement.swift; sourceTree = "<group>"; };
 		84D1FB401DF2ECBD006FF427 /* FlowFinanceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowFinanceTableViewController.swift; sourceTree = "<group>"; };
+		84D1FB421DF2F4AA006FF427 /* FlowGeneralTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowGeneralTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				84C2D85C1DF1EBE3000EAD22 /* ShowPlanTableViewController.swift */,
 				843D65041DF277CA00798F50 /* FlowToDoTableViewController.swift */,
 				84D1FB401DF2ECBD006FF427 /* FlowFinanceTableViewController.swift */,
+				84D1FB421DF2F4AA006FF427 /* FlowGeneralTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				84197E461DEC72DD003FA7E5 /* ResponseBase.swift in Sources */,
 				84A9DFF71DF0799E00E576D3 /* FlowDoc.swift in Sources */,
 				84A9DFF31DF0466800E576D3 /* NoticeViewController.swift in Sources */,
+				84D1FB431DF2F4AA006FF427 /* FlowGeneralTableViewController.swift in Sources */,
 				84C2D8611DF1F161000EAD22 /* FlowStep.swift in Sources */,
 				84BDDD191DEB3D8B0075ECAB /* AppDelegate.swift in Sources */,
 				843D65051DF277CA00798F50 /* FlowToDoTableViewController.swift in Sources */,

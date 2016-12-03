@@ -105,6 +105,17 @@ class ShowPlanTableViewController: UITableViewController, XMLParserDelegate {
         return cell
     }
     
+     // MARK: - Navigation
+    
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+        if segue.identifier == "showPlan" {
+            print("Gonna nagivate to web view")
+        }
+     }
+    
     // MARK: - XML Parser
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {

@@ -945,6 +945,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="uUA-4c-1qF" kind="show" identifier="showPlan" id="86v-15-Lcr"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -957,6 +960,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UIi-Ds-X7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="544" y="2115"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="076-aF-WSg">
+            <objects>
+                <viewController id="uUA-4c-1qF" customClass="WebViewController" customModule="PerkingOpera" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R2d-E8-rwg"/>
+                        <viewControllerLayoutGuide type="bottom" id="gGx-nX-hBn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fne-3m-FME">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nXO-rc-YD1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1084" y="2837"/>
         </scene>
         <!--Flow To Do Table View Controller-->
         <scene sceneID="RDv-rZ-AJb">
@@ -1046,6 +1067,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="kA2-Ih-s4O" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="gg6-8g-oH8">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -1057,6 +1079,19 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SoS-tf-uj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1125" y="1256"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="P8T-tr-zTJ">
+            <objects>
+                <viewController id="u3N-mz-elz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G86-yq-YFd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xik-m2-01U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

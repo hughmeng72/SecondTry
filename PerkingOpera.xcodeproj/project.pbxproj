@@ -36,6 +36,7 @@
 		84C2D85F1DF1F0C8000EAD22 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2D85E1DF1F0C8000EAD22 /* Flow.swift */; };
 		84C2D8611DF1F161000EAD22 /* FlowStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2D8601DF1F161000EAD22 /* FlowStep.swift */; };
 		84C2D8631DF1F422000EAD22 /* FlowProcurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2D8621DF1F422000EAD22 /* FlowProcurement.swift */; };
+		84D1FB411DF2ECBD006FF427 /* FlowFinanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1FB401DF2ECBD006FF427 /* FlowFinanceTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -82,6 +83,7 @@
 		84C2D85E1DF1F0C8000EAD22 /* Flow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
 		84C2D8601DF1F161000EAD22 /* FlowStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowStep.swift; sourceTree = "<group>"; };
 		84C2D8621DF1F422000EAD22 /* FlowProcurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowProcurement.swift; sourceTree = "<group>"; };
+		84D1FB401DF2ECBD006FF427 /* FlowFinanceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowFinanceTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				84C2D85A1DF1E323000EAD22 /* CalendarTableViewController.swift */,
 				84C2D85C1DF1EBE3000EAD22 /* ShowPlanTableViewController.swift */,
 				843D65041DF277CA00798F50 /* FlowToDoTableViewController.swift */,
+				84D1FB401DF2ECBD006FF427 /* FlowFinanceTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				84C2D85D1DF1EBE3000EAD22 /* ShowPlanTableViewController.swift in Sources */,
 				84A9DFF51DF076C700E576D3 /* Notice.swift in Sources */,
 				84BDDD481DEB46970075ECAB /* LoginViewController.swift in Sources */,
+				84D1FB411DF2ECBD006FF427 /* FlowFinanceTableViewController.swift in Sources */,
 				8405C1E71DF1C53400CB3B2D /* Mail.swift in Sources */,
 				84197E461DEC72DD003FA7E5 /* ResponseBase.swift in Sources */,
 				84A9DFF71DF0799E00E576D3 /* FlowDoc.swift in Sources */,

@@ -12,10 +12,20 @@ import UIKit
 class FlowDetailViewController: UITableViewController, XMLParserDelegate {
     
     @IBOutlet weak var flowNameLabel: UILabel!
+    @IBOutlet weak var flowNoLabel: UILabel!
     @IBOutlet weak var depNameLabel: UILabel!
     @IBOutlet weak var creatorLabel: UILabel!
     @IBOutlet weak var createDateLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var remarkLabel: UILabel!
+    @IBOutlet weak var itemNameLabel: UILabel!
+    @IBOutlet weak var projectNameLabel: UILabel!
+    @IBOutlet weak var totalAmountLabel: UILabel!
+    @IBOutlet weak var amountLeftLabel: UILabel!
+    @IBOutlet weak var amountBeingPaidProcurementLabel: UILabel!
+    @IBOutlet weak var amountPaidProcurementLabel: UILabel!
+    @IBOutlet weak var amountBeingPaidReimbursementLabel: UILabel!
+    @IBOutlet weak var amountPaidReimbursementLabel: UILabel!
     
     var itemId: Int!
     
@@ -79,10 +89,20 @@ class FlowDetailViewController: UITableViewController, XMLParserDelegate {
                 }
                 
                 self.flowNameLabel.text = self.item?.flowName
+                self.flowNoLabel.text = self.item?.flowNo
                 self.depNameLabel.text = self.item?.depName
                 self.creatorLabel.text = self.item?.creator
                 self.createDateLabel.text = self.item?.createTime
+                self.amountLabel.text = "\(self.item!.amount)"
                 self.remarkLabel.text = self.item?.remark
+                self.itemNameLabel.text = self.item?.itemName
+                self.projectNameLabel.text = self.item?.projectName
+                self.totalAmountLabel.text = "\(self.item!.totalAmount)"
+                self.amountLeftLabel.text = "\(self.item!.amountLeft)"
+                self.amountBeingPaidProcurementLabel.text = "\(self.item!.amountToBePaidProcurement)"
+                self.amountPaidProcurementLabel.text = "\(self.item!.amountPaidProcurement)"
+                self.amountBeingPaidReimbursementLabel.text = "\(self.item!.amountToBePaidReimbursement)"
+                self.amountPaidReimbursementLabel.text = "\(self.item!.amountPaidReimbursement)"
                 
                 self.tableView.reloadData()
             }

@@ -98,6 +98,19 @@ class GovGeneralTableViewController: UITableViewController, XMLParserDelegate {
         return cell
     }
     
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showGeneralGov" {
+            if let row = tableView.indexPathForSelectedRow?.row {
+                let item = list[row]
+                let controller = segue.destination as! GovDetailViewController
+                
+                controller.itemId = item.id
+            }
+        }
+    }
+    
     // MARK: - XML Parser
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {

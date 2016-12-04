@@ -1,32 +1,31 @@
 //
-//  CalendarTableViewController.swift
+//  GovDetailViewController.swift
 //  PerkingOpera
 //
-//  Created by admin on 03/12/2016.
+//  Created by admin on 12/4/16.
 //  Copyright © 2016 Wayne Meng. All rights reserved.
 //
 
 import Gloss
 import UIKit
 
-class CalendarTableViewController: UITableViewController, XMLParserDelegate {
-
-    private let soapMethod = "GetCalendarList"
+class GovDetailViewController: UITableViewController, XMLParserDelegate {
     
-    var elementValue: String?
+    var itemId: Int!
     
-    var list: [Calendar] = []
-
+    private let soapMethod = "GetGovDetail"
+    
+    private var elementValue: String?
+    
+    private var item: Gov?
+    
+    private var steps = [FlowStep]()
+    
+    private var attachments = [FlowDoc]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Get the height of the status bar
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height + 80
-        
-        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
-        tableView.contentInset = insets
-        tableView.scrollIndicatorInsets = insets
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 48
@@ -38,7 +37,7 @@ class CalendarTableViewController: UITableViewController, XMLParserDelegate {
         }
         
         let parameters = "<token>\(user.token)</token>"
-            + "<showPlan>false</showPlan>"
+            + "<govId>\(itemId!)</govId>"
         
         let request = SoapHelper.getURLRequest(method: soapMethod, parameters: parameters)
         
@@ -57,7 +56,7 @@ class CalendarTableViewController: UITableViewController, XMLParserDelegate {
             
             // if we've gotten here, update the UI
             DispatchQueue.main.async {
-                if self.list.count == 0 {
+                if self.item == nil {
                     let controller = UIAlertController(
                         title: "没有检索到相关数据",
                         message: "", preferredStyle: .alert)
@@ -79,43 +78,66 @@ class CalendarTableViewController: UITableViewController, XMLParserDelegate {
         
         task.resume()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     
-    // MARK: - Table view data source
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
+    
 
+    // MARK: - Table view data source
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            if item != nil && item?.attachments != nil {
+                return item!.attachments!.count
+            }
+            else {
+                return 0
+            }
+        case 1:
+            if item != nil && item?.steps != nil {
+                return item!.steps!.count
+            }
+            else {
+                return 0
+            }
+        default:
+            return 0
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return section == 0 ? "附件" : "审批进度"
+    }
+    
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
-        let item = list[indexPath.row]
         
-        cell.subjectLabel.text = item.title
-        cell.categoryLabel.text = item.depName
-        cell.timeLabel.text = item.createTime
+        var cell: UITableViewCell
+        
+        if indexPath.section == 0 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell", for: indexPath)
+            
+            let item = attachments[indexPath.row]
+            
+            cell.textLabel?.text = item.fileName
+        }
+        else {
+            cell = tableView.dequeueReusableCell(withIdentifier: "StepCell", for: indexPath)
+            
+            let item = steps[indexPath.row]
+            
+            cell.textLabel?.text = item.stepName
+            cell.detailTextLabel?.text = item.description
+        }
         
         return cell
-    }
-    
-
-    // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showCalendar" {
-            if let row = tableView.indexPathForSelectedRow?.row {
-                let item = list[row]
-                let webController = segue.destination as! WebViewController
-                
-                webController.urlString = item.url
-            }
-        }
     }
     
     // MARK: - XML Parser
@@ -132,17 +154,25 @@ class CalendarTableViewController: UITableViewController, XMLParserDelegate {
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "\(soapMethod)Result" {
-            //            print(elementValue ?? "Not got any data from ws.")
+            print(elementValue ?? "Not got any data from ws.")
             
             let result = convertStringToDictionary(text: elementValue!)
             print(result ?? "Not got any data from ws.")
             
-            guard let resultObject = ResponseResultList<Calendar>(json: result!) else {
+            guard let resultObject = ResponseResultList<Gov>(json: result!) else {
                 print("DECODING FAILURE :(")
                 return
             }
             
-            self.list = resultObject.list
+            self.item = resultObject.list[0]
+            
+            if let a = self.item?.attachments {
+                self.attachments = a
+            }
+            
+            if let s = self.item?.steps {
+                self.steps = s
+            }
             
             elementValue = nil;
         }
@@ -159,5 +189,5 @@ class CalendarTableViewController: UITableViewController, XMLParserDelegate {
         
         return nil
     }
-    
+
 }

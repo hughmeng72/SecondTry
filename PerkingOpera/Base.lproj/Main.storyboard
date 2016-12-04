@@ -316,6 +316,7 @@
                                     <outlet property="categoryLabel" destination="UXM-lo-Ba7" id="qgz-uH-ZNE"/>
                                     <outlet property="creatorLabel" destination="TrJ-sd-PdP" id="TQk-7u-xc0"/>
                                     <outlet property="subjectLabel" destination="OB5-gO-sKp" id="pmo-zB-zBf"/>
+                                    <segue destination="vll-Iu-pF5" kind="show" identifier="showTodoGov" id="CI5-6l-ywl"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -895,7 +896,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="备注：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53d-FV-I1k" userLabel="Remark Title">
-                                    <rect key="frame" x="8" y="198" width="49" height="19.5"/>
+                                    <rect key="frame" x="8" y="208" width="49" height="19.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="CqJ-Dw-mEU"/>
                                     </constraints>
@@ -903,8 +904,8 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWC-8N-mZT" userLabel="Remark Value">
-                                    <rect key="frame" x="65" y="162" width="255" height="90"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWC-8N-mZT" userLabel="Remark Value">
+                                    <rect key="frame" x="65" y="162" width="255" height="110"/>
                                     <string key="text">cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <nil key="textColor"/>
@@ -914,6 +915,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="9gi-g6-U2L" firstAttribute="leading" secondItem="Wvb-Ea-nFD" secondAttribute="leading" id="25z-bM-rl3"/>
+                                <constraint firstAttribute="bottom" secondItem="vWC-8N-mZT" secondAttribute="bottom" constant="8" id="2pl-Oh-Dgp"/>
                                 <constraint firstItem="53d-FV-I1k" firstAttribute="width" secondItem="9gi-g6-U2L" secondAttribute="width" id="3Ba-UP-aha"/>
                                 <constraint firstItem="vUN-SF-99Q" firstAttribute="leading" secondItem="Ksd-bB-Ves" secondAttribute="leading" id="3fA-OU-Eld"/>
                                 <constraint firstItem="gEz-ea-Ppm" firstAttribute="top" secondItem="F0v-Hn-zY6" secondAttribute="top" constant="8" id="3yr-Ck-qhL"/>
@@ -1271,5 +1273,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="W5P-xX-ac0"/>
+        <segue reference="CI5-6l-ywl"/>
     </inferredMetricsTieBreakers>
 </document>

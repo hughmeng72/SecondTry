@@ -92,7 +92,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="gpc-99-4xp">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
+                            <rect key="frame" x="0.0" y="64" width="320" height="280"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名称：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Bm-4p-GiN" userLabel="Name Title">
@@ -243,6 +243,13 @@
                             <outlet property="delegate" destination="VXW-Yh-t4R" id="Fxb-1w-25o"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="createDateLabel" destination="ljh-HR-cSW" id="rFM-Cd-EIS"/>
+                        <outlet property="creatorLabel" destination="cft-hW-bDt" id="aRR-C8-YHb"/>
+                        <outlet property="depNameLabel" destination="bBF-fc-xt5" id="Ngn-ga-uI5"/>
+                        <outlet property="flowNameLabel" destination="bGn-yj-mi8" id="lLl-gm-BTR"/>
+                        <outlet property="remarkLabel" destination="uzy-oc-RHy" id="e73-Xs-ERF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XoT-MB-hmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1390,6 +1397,7 @@
                                     <outlet property="categoryLabel" destination="VIs-tT-lC4" id="zAa-uW-IzU"/>
                                     <outlet property="creatorLabel" destination="CRN-eD-9lr" id="pPJ-cC-VLR"/>
                                     <outlet property="subjectLabel" destination="07j-1U-4Fk" id="17s-WZ-eIj"/>
+                                    <segue destination="VXW-Yh-t4R" kind="show" identifier="showTodoFlow" id="mSL-at-DMh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

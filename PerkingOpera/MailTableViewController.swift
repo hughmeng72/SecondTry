@@ -73,6 +73,19 @@ class MailTableViewController: UITableViewController, XMLParserDelegate {
         task.resume()
     }
     
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMail" {
+            if let row = tableView.indexPathForSelectedRow?.row {
+                let item = list[row]
+                let webController = segue.destination as! WebViewController
+                
+                webController.urlString = item.url
+            }
+        }
+    }
+    
     // MARK: - XML Parser
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         if elementName == "\(soapMethod)Result" {

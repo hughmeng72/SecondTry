@@ -11,7 +11,7 @@ import WebKit
 
 class WebViewController: UIViewController, WKUIDelegate {
 
-    var url: String!
+    var urlString: String!
     var webView: WKWebView!
     
     override func loadView() {
@@ -24,7 +24,9 @@ class WebViewController: UIViewController, WKUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = URL(string: self.url)
+        print("Loading " + self.urlString)
+        
+        let url = URL(string: self.urlString)
         let request = URLRequest(url: url!)
         webView.load(request)
     }

@@ -100,7 +100,21 @@ class NoticeViewController: UITableViewController, XMLParserDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showNotice" {
+            if let row = tableView.indexPathForSelectedRow?.row {
+                let item = list[row]
+                let webController = segue.destination as! WebViewController
+                
+                webController.urlString = item.url
+            }
+        }
+    }
+    
+    // MARK: - XML Parser
+    
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         if elementName == "\(soapMethod)Result" {
             elementValue = ""
@@ -140,16 +154,5 @@ class NoticeViewController: UITableViewController, XMLParserDelegate {
         
         return nil
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -10,6 +10,8 @@ import Gloss
 import UIKit
 
 class GovDetailViewController: UITableViewController, XMLParserDelegate {
+
+    
     
     var itemId: Int!
     
@@ -71,6 +73,8 @@ class GovDetailViewController: UITableViewController, XMLParserDelegate {
                     
                     return
                 }
+                
+                
                 
                 self.tableView.reloadData()
             }

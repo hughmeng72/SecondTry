@@ -112,7 +112,12 @@ class ShowPlanTableViewController: UITableViewController, XMLParserDelegate {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
         if segue.identifier == "showPlan" {
-            print("Gonna nagivate to web view")
+            if let row = tableView.indexPathForSelectedRow?.row {
+                let item = list[row]
+                let webController = segue.destination as! WebViewController
+                
+                webController.url = item.url
+            }
         }
      }
     

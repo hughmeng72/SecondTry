@@ -11,6 +11,7 @@ import WebKit
 
 class WebViewController: UIViewController, WKUIDelegate {
 
+    var url: String!
     var webView: WKWebView!
     
     override func loadView() {
@@ -23,15 +24,12 @@ class WebViewController: UIViewController, WKUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = URL(string: "http://www.jjyoa.com:8000/WebService/Pages/Calendar_View.aspx?id=39")
+        let url = URL(string: self.url)
         let request = URLRequest(url: url!)
         webView.load(request)
     }
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-
 }

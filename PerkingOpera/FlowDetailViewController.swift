@@ -1,21 +1,33 @@
 //
-//  RequestToDoTableViewController.swift
+//  FlowDetailViewController.swift
 //  PerkingOpera
 //
-//  Created by admin on 03/12/2016.
+//  Created by admin on 12/4/16.
 //  Copyright © 2016 Wayne Meng. All rights reserved.
 //
 
 import Gloss
 import UIKit
 
-class FlowToDoTableViewController: UITableViewController, XMLParserDelegate {
-
-    private let soapMethod = "GetApprovalFlowList"
+class FlowDetailViewController: UITableViewController, XMLParserDelegate {
     
-    var elementValue: String?
+    @IBOutlet weak var flowNameLabel: UILabel!
+    @IBOutlet weak var depNameLabel: UILabel!
+    @IBOutlet weak var creatorLabel: UILabel!
+    @IBOutlet weak var createDateLabel: UILabel!
+    @IBOutlet weak var remarkLabel: UILabel!
     
-    var list: [Flow] = []
+    var itemId: Int!
+    
+    private let soapMethod = "GetFlowDetail"
+    
+    private var elementValue: String?
+    
+    private var item: Flow?
+    
+    private var steps = [FlowStep]()
+    
+    private var attachments = [FlowDoc]()
     
     
     override func viewDidLoad() {
@@ -29,9 +41,9 @@ class FlowToDoTableViewController: UITableViewController, XMLParserDelegate {
                 print("Failed to get user object")
                 return
         }
-
+        
         let parameters = "<token>\(user.token)</token>"
-            + "<showPlan>false</showPlan>"
+            + "<flowId>\(itemId!)</flowId>"
         
         let request = SoapHelper.getURLRequest(method: soapMethod, parameters: parameters)
         
@@ -50,7 +62,7 @@ class FlowToDoTableViewController: UITableViewController, XMLParserDelegate {
             
             // if we've gotten here, update the UI
             DispatchQueue.main.async {
-                if self.list.count == 0 {
+                if self.item == nil {
                     let controller = UIAlertController(
                         title: "没有检索到相关数据",
                         message: "", preferredStyle: .alert)
@@ -66,49 +78,78 @@ class FlowToDoTableViewController: UITableViewController, XMLParserDelegate {
                     return
                 }
                 
+                self.flowNameLabel.text = self.item?.flowName
+                self.depNameLabel.text = self.item?.depName
+                self.creatorLabel.text = self.item?.creator
+                self.createDateLabel.text = self.item?.createTime
+                self.remarkLabel.text = self.item?.remark
+                
                 self.tableView.reloadData()
             }
         }
         
         task.resume()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
-
+    
     
     // MARK: - Table view data source
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
-
+    
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            if item != nil && item?.attachments != nil {
+                return item!.attachments!.count
+            }
+            else {
+                return 0
+            }
+        case 1:
+            if item != nil && item?.steps != nil {
+                return item!.steps!.count
+            }
+            else {
+                return 0
+            }
+        default:
+            return 0
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return section == 0 ? "附件" : "审批进度"
+    }
+    
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Item2Cell", for: indexPath) as! Item2Cell
-        let item = list[indexPath.row]
         
-        cell.subjectLabel.text = item.flowName
-        cell.categoryLabel.text = item.modelName
-        cell.creatorLabel.text = item.creator
-        cell.amountLabel.text = "\(item.amount)"
-        cell.addTimeLabel.text = item.createTime
+        var cell: UITableViewCell
+        
+        if indexPath.section == 0 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell", for: indexPath)
+            
+            let item = attachments[indexPath.row]
+            
+            cell.textLabel?.text = item.fileName
+        }
+        else {
+            cell = tableView.dequeueReusableCell(withIdentifier: "StepCell", for: indexPath)
+            
+            let item = steps[indexPath.row]
+            
+            cell.textLabel?.text = item.stepName
+            cell.detailTextLabel?.text = item.description
+        }
         
         return cell
-    }
-
-    // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showTodoFlow" {
-            if let row = tableView.indexPathForSelectedRow?.row {
-                let item = list[row]
-                let controller = segue.destination as! FlowDetailViewController
-                
-                controller.itemId = item.id
-            }
-        }
     }
     
     // MARK: - XML Parser
@@ -135,7 +176,15 @@ class FlowToDoTableViewController: UITableViewController, XMLParserDelegate {
                 return
             }
             
-            self.list = resultObject.list
+            self.item = resultObject.list[0]
+            
+            if let a = self.item?.attachments {
+                self.attachments = a
+            }
+            
+            if let s = self.item?.steps {
+                self.steps = s
+            }
             
             elementValue = nil;
         }
@@ -152,5 +201,5 @@ class FlowToDoTableViewController: UITableViewController, XMLParserDelegate {
         
         return nil
     }
-
+    
 }

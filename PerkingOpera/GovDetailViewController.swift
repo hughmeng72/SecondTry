@@ -11,7 +11,11 @@ import UIKit
 
 class GovDetailViewController: UITableViewController, XMLParserDelegate {
 
-    
+    @IBOutlet weak var flowNameLabel: UILabel!
+    @IBOutlet weak var depNameLabel: UILabel!
+    @IBOutlet weak var creatorLabel: UILabel!
+    @IBOutlet weak var createDateLabel: UILabel!
+    @IBOutlet weak var remarkLabel: UILabel!
     
     var itemId: Int!
     
@@ -74,7 +78,11 @@ class GovDetailViewController: UITableViewController, XMLParserDelegate {
                     return
                 }
                 
-                
+                self.flowNameLabel.text = self.item?.flowName
+                self.depNameLabel.text = self.item?.depName
+                self.creatorLabel.text = self.item?.creator
+                self.createDateLabel.text = self.item?.createTime
+                self.remarkLabel.text = self.item?.remark
                 
                 self.tableView.reloadData()
             }

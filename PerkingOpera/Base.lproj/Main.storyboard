@@ -993,6 +993,13 @@
                             <outlet property="delegate" destination="vll-Iu-pF5" id="2Gk-8b-ZPL"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="createDateLabel" destination="NrY-AB-RKO" id="oeN-IM-4I9"/>
+                        <outlet property="creatorLabel" destination="vUN-SF-99Q" id="tcp-KI-TGG"/>
+                        <outlet property="depNameLabel" destination="Ksd-bB-Ves" id="dlS-3v-g98"/>
+                        <outlet property="flowNameLabel" destination="gEz-ea-Ppm" id="I37-Z6-rwg"/>
+                        <outlet property="remarkLabel" destination="vWC-8N-mZT" id="Kxk-d9-R9P"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lJh-j3-hwv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

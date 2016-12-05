@@ -1,5 +1,5 @@
 framework module Gloss {
-  umbrella header "Gloss-umbrella.h"
+  umbrella header "Gloss.h"
 
   export *
   module * { export * }

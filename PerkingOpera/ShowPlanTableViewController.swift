@@ -23,16 +23,30 @@ class ShowPlanTableViewController: UITableViewController, XMLParserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setViewHeights()
+        
+        load()
+    }
+    
+    func setViewHeights() {
         // Get the height of the status bar
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         
-        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
+        // Get the height of the navigation bar
+        let navBarHeight = self.navigationController == nil ? 0 : self.navigationController?.navigationBar.frame.size.height
+        
+        // Get the height of the tab bar
+        let tabBarHeight = self.tabBarController == nil ? 0 : self.tabBarController?.tabBar.frame.size.height
+        
+        let insets = UIEdgeInsets(top: statusBarHeight + navBarHeight!, left: 0, bottom: tabBarHeight!, right: 0)
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
         
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 48
-        
+        tableView.estimatedRowHeight = 36
+    }
+    
+    func load() {
         guard let user = Repository.sharedInstance.user
             else {
                 print("Failed to get user object")

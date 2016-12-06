@@ -9,9 +9,13 @@
 import Foundation
 
 class SoapHelper {
-//    private static let host = "http://test.freight-track.com/"
 //    private static let host = "http://192.168.9.31/"
-    private static let host = "http://www.jjyoa.com:8000/"
+    private static let host = "http://test.freight-track.com/"
+//    private static let host = "http://www.jjyoa.com:8000/"
+    
+//    private static let requestUrl = "\(host)WebUI/WebService/Perkingopera.asmx"
+    private static let requestUrl = "\(host)WebService/Perkingopera.asmx"
+    
     
     static func getURLRequest(method: String, parameters: String) -> URLRequest {
         let bodyString = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
@@ -24,8 +28,7 @@ class SoapHelper {
             "</soap:Body>" +
         "</soap:Envelope>"
 
-        var request = URLRequest(url: URL(string: "\(host)WebService/Perkingopera.asmx")!)
-//        var request = URLRequest(url: URL(string: "\(host)WebUI/WebService/Perkingopera.asmx")!)
+        var request = URLRequest(url: URL(string: requestUrl)!)
         
         request.httpMethod = "POST"
         request.httpBody = bodyString.data(using: .utf8)

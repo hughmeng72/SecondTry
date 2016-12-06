@@ -34,11 +34,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, XMLParserDeleg
     }
     
     @IBAction func Login(_ sender: Any) {
-//        let userName = "zhangf"
-//        let password = "123456"
+        let userName = "zhangf"
+        let password = "123456"
         
-        let userName = UserName.text!
-        let password = Password.text!
+//        let userName = UserName.text!
+//        let password = Password.text!
         
         let parameters = "<userName>\(userName)</userName>"
             + "<password>\(password)</password>"

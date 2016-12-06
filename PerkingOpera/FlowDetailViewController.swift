@@ -111,8 +111,20 @@ class FlowDetailViewController: UITableViewController, XMLParserDelegate {
         task.resume()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+//        if let view = self.tableView.tableHeaderView {
+//            view.setNeedsLayout()
+//            view.layoutIfNeeded()
+//            
+//            let height = view.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+//            var headerFrame = view.frame
+//            headerFrame.size.height = height
+//            view.frame = headerFrame
+//            
+//            self.tableView.tableHeaderView = view
+//        }
     }
     
     

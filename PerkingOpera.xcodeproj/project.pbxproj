@@ -15,8 +15,6 @@
 		841F7F801DF19823007D6F1C /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F7F7F1DF19823007D6F1C /* ItemCell.swift */; };
 		843D65051DF277CA00798F50 /* FlowToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D65041DF277CA00798F50 /* FlowToDoTableViewController.swift */; };
 		843D65071DF279E300798F50 /* Item2Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D65061DF279E300798F50 /* Item2Cell.swift */; };
-		8474CBC11DF5CF48005FEA10 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8474CBC01DF5CF48005FEA10 /* Gloss.framework */; };
-		8474CBC21DF5CF48005FEA10 /* Gloss.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8474CBC01DF5CF48005FEA10 /* Gloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84854C421DF47DAC00B0F744 /* FlowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84854C411DF47DAC00B0F744 /* FlowDetailViewController.swift */; };
 		84A48A171DF3BEA5002A94D7 /* GovDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A48A161DF3BEA5002A94D7 /* GovDetailViewController.swift */; };
 		84A5A7C91DF4184D00903189 /* ResponseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5A7C81DF4184D00903189 /* ResponseResult.swift */; };
@@ -42,6 +40,8 @@
 		84C2D85F1DF1F0C8000EAD22 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2D85E1DF1F0C8000EAD22 /* Flow.swift */; };
 		84C2D8611DF1F161000EAD22 /* FlowStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2D8601DF1F161000EAD22 /* FlowStep.swift */; };
 		84C2D8631DF1F422000EAD22 /* FlowProcurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2D8621DF1F422000EAD22 /* FlowProcurement.swift */; };
+		84C57ABF1DF65938002B1CC7 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C57ABE1DF65938002B1CC7 /* Gloss.framework */; };
+		84C57AC01DF65938002B1CC7 /* Gloss.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84C57ABE1DF65938002B1CC7 /* Gloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84D1FB411DF2ECBD006FF427 /* FlowFinanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1FB401DF2ECBD006FF427 /* FlowFinanceTableViewController.swift */; };
 		84D1FB431DF2F4AA006FF427 /* FlowGeneralTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1FB421DF2F4AA006FF427 /* FlowGeneralTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -53,7 +53,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8474CBC21DF5CF48005FEA10 /* Gloss.framework in Embed Frameworks */,
+				84C57AC01DF65938002B1CC7 /* Gloss.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,7 +69,6 @@
 		841F7F7F1DF19823007D6F1C /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		843D65041DF277CA00798F50 /* FlowToDoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowToDoTableViewController.swift; sourceTree = "<group>"; };
 		843D65061DF279E300798F50 /* Item2Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item2Cell.swift; sourceTree = "<group>"; };
-		8474CBC01DF5CF48005FEA10 /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Gloss.framework; sourceTree = "<group>"; };
 		84854C411DF47DAC00B0F744 /* FlowDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowDetailViewController.swift; sourceTree = "<group>"; };
 		84A48A161DF3BEA5002A94D7 /* GovDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GovDetailViewController.swift; sourceTree = "<group>"; };
 		84A5A7C81DF4184D00903189 /* ResponseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseResult.swift; sourceTree = "<group>"; };
@@ -97,6 +96,7 @@
 		84C2D85E1DF1F0C8000EAD22 /* Flow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
 		84C2D8601DF1F161000EAD22 /* FlowStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowStep.swift; sourceTree = "<group>"; };
 		84C2D8621DF1F422000EAD22 /* FlowProcurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowProcurement.swift; sourceTree = "<group>"; };
+		84C57ABE1DF65938002B1CC7 /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Gloss.framework; sourceTree = "<group>"; };
 		84D1FB401DF2ECBD006FF427 /* FlowFinanceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowFinanceTableViewController.swift; sourceTree = "<group>"; };
 		84D1FB421DF2F4AA006FF427 /* FlowGeneralTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowGeneralTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8474CBC11DF5CF48005FEA10 /* Gloss.framework in Frameworks */,
+				84C57ABF1DF65938002B1CC7 /* Gloss.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,7 +175,7 @@
 		84BDDD0C1DEB3D8B0075ECAB = {
 			isa = PBXGroup;
 			children = (
-				8474CBC01DF5CF48005FEA10 /* Gloss.framework */,
+				84F530851DF6CD010095FF85 /* Frameworks */,
 				84BDDD171DEB3D8B0075ECAB /* PerkingOpera */,
 				84BDDD161DEB3D8B0075ECAB /* Products */,
 			);
@@ -203,6 +203,14 @@
 				84BDDD241DEB3D8B0075ECAB /* Info.plist */,
 			);
 			path = PerkingOpera;
+			sourceTree = "<group>";
+		};
+		84F530851DF6CD010095FF85 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84C57ABE1DF65938002B1CC7 /* Gloss.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,6 +439,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BITCODE_GENERATION_MODE = marker;
 				DEVELOPMENT_TEAM = 3D7SD5D255;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -438,6 +447,7 @@
 				);
 				INFOPLIST_FILE = PerkingOpera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "-fembed-bitcode-marker";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jinglan.ios.PerkingOpera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -448,6 +458,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BITCODE_GENERATION_MODE = bitcode;
 				DEVELOPMENT_TEAM = 3D7SD5D255;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -455,6 +466,7 @@
 				);
 				INFOPLIST_FILE = PerkingOpera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "-fembed-bitcode";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jinglan.ios.PerkingOpera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

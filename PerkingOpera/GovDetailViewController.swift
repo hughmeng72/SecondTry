@@ -104,13 +104,16 @@ class GovDetailViewController: UITableViewController, XMLParserDelegate {
     func sizeHeaderToFit() {
         let headerView = tableView.tableHeaderView!
         
-        headerView.setNeedsLayout()
-        headerView.layoutIfNeeded()
+//        headerView.setNeedsLayout()
+//        headerView.layoutIfNeeded()
         
         let height = headerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
         var frame = headerView.frame
         frame.size.height = height
         headerView.frame = frame
+
+//        headerView.setNeedsLayout()
+//        headerView.layoutIfNeeded()
     }
     
     

@@ -1213,18 +1213,6 @@
                             <rect key="frame" x="0.0" y="224" width="320" height="280"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="拟稿：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvb-Ea-nFD" userLabel="Creator Title">
-                                    <rect key="frame" x="8" y="75" width="49" height="20"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="读取中..." textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUN-SF-99Q" userLabel="Creator Value">
-                                    <rect key="frame" x="261" y="186" width="59" height="18"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="日期：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gi-g6-U2L" userLabel="Date Title">
                                     <rect key="frame" x="8" y="109" width="49" height="20"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
@@ -1255,17 +1243,11 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="9gi-g6-U2L" firstAttribute="leading" secondItem="Wvb-Ea-nFD" secondAttribute="leading" id="25z-bM-rl3"/>
                                 <constraint firstAttribute="bottom" secondItem="vWC-8N-mZT" secondAttribute="bottom" constant="8" id="2pl-Oh-Dgp"/>
                                 <constraint firstItem="53d-FV-I1k" firstAttribute="width" secondItem="9gi-g6-U2L" secondAttribute="width" id="3Ba-UP-aha"/>
-                                <constraint firstAttribute="trailing" secondItem="vUN-SF-99Q" secondAttribute="trailing" id="9Ps-wf-wMp"/>
-                                <constraint firstItem="NrY-AB-RKO" firstAttribute="leading" secondItem="vUN-SF-99Q" secondAttribute="leading" id="G7N-re-cMF"/>
-                                <constraint firstItem="NrY-AB-RKO" firstAttribute="top" secondItem="vUN-SF-99Q" secondAttribute="bottom" constant="16" id="Gts-K1-0ot"/>
                                 <constraint firstAttribute="trailing" secondItem="vWC-8N-mZT" secondAttribute="trailing" id="Jce-9i-u7G"/>
                                 <constraint firstAttribute="trailing" secondItem="NrY-AB-RKO" secondAttribute="trailing" id="MD0-zD-wNd"/>
-                                <constraint firstItem="9gi-g6-U2L" firstAttribute="width" secondItem="Wvb-Ea-nFD" secondAttribute="width" id="NQw-kL-3gG"/>
                                 <constraint firstItem="53d-FV-I1k" firstAttribute="leading" secondItem="9gi-g6-U2L" secondAttribute="leading" id="QcX-mZ-5uz"/>
-                                <constraint firstItem="Wvb-Ea-nFD" firstAttribute="baseline" secondItem="vUN-SF-99Q" secondAttribute="baseline" id="aNF-Fz-aDY"/>
                                 <constraint firstItem="vWC-8N-mZT" firstAttribute="top" secondItem="NrY-AB-RKO" secondAttribute="bottom" constant="16" id="eoU-I6-mit"/>
                                 <constraint firstItem="vWC-8N-mZT" firstAttribute="leading" secondItem="NrY-AB-RKO" secondAttribute="leading" id="jza-R2-KDw"/>
                                 <constraint firstItem="53d-FV-I1k" firstAttribute="centerY" secondItem="vWC-8N-mZT" secondAttribute="centerY" id="tZg-gA-JI0"/>
@@ -1281,13 +1263,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fe9-xn-V2b">
-                                            <rect key="frame" x="16" y="8" width="288" height="27.5"/>
+                                            <rect key="frame" x="16" y="8" width="288" height="28"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H6e-Q9-vzj" userLabel="Name Stack View">
-                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="18"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="0.0"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name: " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdF-aK-Gjz" userLabel="Name Title">
-                                                            <rect key="frame" x="0.0" y="0.0" width="64" height="18"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="64" height="0.0"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="64" id="EVT-Dn-Ocr"/>
                                                             </constraints>
@@ -1295,8 +1277,8 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" ambiguous="YES" text="Gov Item Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEz-ea-Ppm" userLabel="Name Value">
-                                                            <rect key="frame" x="64" y="0.0" width="224" height="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" ambiguous="YES" text="Gov Item Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEz-ea-Ppm" userLabel="Name Value">
+                                                            <rect key="frame" x="64" y="0.0" width="224" height="0.0"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1304,18 +1286,35 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d4N-jE-tWp" userLabel="Dep Stack View">
-                                                    <rect key="frame" x="0.0" y="26" width="288" height="1.5"/>
+                                                    <rect key="frame" x="0.0" y="8" width="288" height="0.0"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="部门：" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wh8-tR-AUm" userLabel="Dep Title">
-                                                            <rect key="frame" x="0.0" y="0.0" width="64" height="1.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="64" height="0.0"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksd-bB-Ves" userLabel="Dep Value">
-                                                            <rect key="frame" x="64" y="0.0" width="224" height="1.5"/>
+                                                            <rect key="frame" x="64" y="0.0" width="224" height="0.0"/>
                                                             <string key="text">“I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing. This is to my Father’s glory, that you bear much fruit, showing yourselves to be my disciples.
 John 15:5,8 NIV</string>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Sf-WS-mws" userLabel="Creator Stack View">
+                                                    <rect key="frame" x="0.0" y="16" width="288" height="12"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="拟稿：" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvb-Ea-nFD" userLabel="Creator Title">
+                                                            <rect key="frame" x="0.0" y="0.0" width="64" height="12"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" ambiguous="YES" text="读取中..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUN-SF-99Q" userLabel="Creator Value">
+                                                            <rect key="frame" x="64" y="0.0" width="224" height="12"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1325,6 +1324,7 @@ John 15:5,8 NIV</string>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Wh8-tR-AUm" firstAttribute="width" secondItem="TdF-aK-Gjz" secondAttribute="width" id="Rd2-8A-Jme"/>
+                                                <constraint firstItem="Wvb-Ea-nFD" firstAttribute="width" secondItem="TdF-aK-Gjz" secondAttribute="width" id="o8k-X4-S2j"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>
@@ -1336,6 +1336,7 @@ John 15:5,8 NIV</string>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="creatorLabel" destination="vUN-SF-99Q" id="9y2-vI-Z2d"/>
                                     <outlet property="depNameLabel" destination="Ksd-bB-Ves" id="Yb9-s1-cph"/>
                                     <outlet property="flowNameLabel" destination="gEz-ea-Ppm" id="NYK-Ja-vaa"/>
                                 </connections>
@@ -1387,11 +1388,6 @@ John 15:5,8 NIV</string>
                             <outlet property="delegate" destination="vll-Iu-pF5" id="2Gk-8b-ZPL"/>
                         </connections>
                     </tableView>
-                    <connections>
-                        <outlet property="createDateLabel" destination="NrY-AB-RKO" id="oeN-IM-4I9"/>
-                        <outlet property="creatorLabel" destination="vUN-SF-99Q" id="tcp-KI-TGG"/>
-                        <outlet property="remarkLabel" destination="vWC-8N-mZT" id="Kxk-d9-R9P"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lJh-j3-hwv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

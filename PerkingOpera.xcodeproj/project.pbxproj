@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8405C1E71DF1C53400CB3B2D /* Mail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405C1E61DF1C53400CB3B2D /* Mail.swift */; };
 		8405C1E91DF1C9C000CB3B2D /* MailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405C1E81DF1C9C000CB3B2D /* MailTableViewController.swift */; };
+		841760861DFAEE730038CC5D /* HtmlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841760851DFAEE730038CC5D /* HtmlHelper.swift */; };
+		841760881DFAEEFA0038CC5D /* GovHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841760871DFAEEFA0038CC5D /* GovHeaderCell.swift */; };
 		84197E461DEC72DD003FA7E5 /* ResponseBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84197E451DEC72DD003FA7E5 /* ResponseBase.swift */; };
 		841F4E1E1DEDCCE1009032FB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F4E1D1DEDCCE1009032FB /* MainViewController.swift */; };
 		841F4E201DEDD275009032FB /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F4E1F1DEDD275009032FB /* RoundButton.swift */; };
@@ -63,6 +65,8 @@
 /* Begin PBXFileReference section */
 		8405C1E61DF1C53400CB3B2D /* Mail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mail.swift; sourceTree = "<group>"; };
 		8405C1E81DF1C9C000CB3B2D /* MailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailTableViewController.swift; sourceTree = "<group>"; };
+		841760851DFAEE730038CC5D /* HtmlHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlHelper.swift; sourceTree = "<group>"; };
+		841760871DFAEEFA0038CC5D /* GovHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GovHeaderCell.swift; sourceTree = "<group>"; };
 		84197E451DEC72DD003FA7E5 /* ResponseBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseBase.swift; sourceTree = "<group>"; };
 		841F4E1D1DEDCCE1009032FB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		841F4E1F1DEDD275009032FB /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 				841F7F7F1DF19823007D6F1C /* ItemCell.swift */,
 				843D65061DF279E300798F50 /* Item2Cell.swift */,
 				841F4E1F1DEDD275009032FB /* RoundButton.swift */,
+				841760871DFAEEFA0038CC5D /* GovHeaderCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 			children = (
 				84A9DFFA1DF08D3D00E576D3 /* SoapHelper.swift */,
 				84A9DFF81DF0831C00E576D3 /* Repository.swift */,
+				841760851DFAEE730038CC5D /* HtmlHelper.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -293,6 +299,8 @@
 				84854C421DF47DAC00B0F744 /* FlowDetailViewController.swift in Sources */,
 				84C2D85B1DF1E323000EAD22 /* CalendarTableViewController.swift in Sources */,
 				841F7F801DF19823007D6F1C /* ItemCell.swift in Sources */,
+				841760861DFAEE730038CC5D /* HtmlHelper.swift in Sources */,
+				841760881DFAEEFA0038CC5D /* GovHeaderCell.swift in Sources */,
 				84B236031DF309E000886E50 /* Gov.swift in Sources */,
 				841F4E201DEDD275009032FB /* RoundButton.swift in Sources */,
 				84C2D8591DF1E1AF000EAD22 /* Calendar.swift in Sources */,

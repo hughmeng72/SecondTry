@@ -11,12 +11,6 @@ import UIKit
 
 class GovDetailViewController: UITableViewController, XMLParserDelegate {
 
-    @IBOutlet weak var flowNameLabel: UILabel!
-    @IBOutlet weak var depNameLabel: UILabel!
-    @IBOutlet weak var creatorLabel: UILabel!
-    @IBOutlet weak var createDateLabel: UILabel!
-    @IBOutlet weak var remarkLabel: UILabel!
-    
     var itemId: Int!
     
     private let soapMethod = "GetGovDetail"
@@ -34,7 +28,7 @@ class GovDetailViewController: UITableViewController, XMLParserDelegate {
         super.viewDidLoad()
         
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 48
+        tableView.estimatedRowHeight = 64
         
         guard let user = Repository.sharedInstance.user
             else {
@@ -78,12 +72,6 @@ class GovDetailViewController: UITableViewController, XMLParserDelegate {
                     return
                 }
                 
-                self.flowNameLabel.text = self.item?.flowName
-                self.depNameLabel.text = self.item?.depName
-                self.creatorLabel.text = self.item?.creator
-                self.createDateLabel.text = self.item?.createTime
-                self.remarkLabel.text = self.item?.remark
-                
                 self.tableView.reloadData()
             }
         }
@@ -96,44 +84,23 @@ class GovDetailViewController: UITableViewController, XMLParserDelegate {
     }
     
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        sizeHeaderToFit()
-    }
-    
-    func sizeHeaderToFit() {
-        let headerView = tableView.tableHeaderView!
-        
-//        headerView.setNeedsLayout()
-//        headerView.layoutIfNeeded()
-        
-        let height = headerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
-        var frame = headerView.frame
-        frame.size.height = height
-        headerView.frame = frame
-
-//        headerView.setNeedsLayout()
-//        headerView.layoutIfNeeded()
-    }
-    
-    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0:
+        case 1:
             if item != nil && item?.attachments != nil {
                 return item!.attachments!.count
             }
             else {
                 return 0
             }
-        case 1:
+        case 2:
             if item != nil && item?.steps != nil {
                 return item!.steps!.count
             }
@@ -141,36 +108,58 @@ class GovDetailViewController: UITableViewController, XMLParserDelegate {
                 return 0
             }
         default:
-            return 0
+            return 1
         }
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return section == 0 ? "附件" : "审批进度"
+        switch section {
+        case 0:
+            return "Basic Info"
+        case 1:
+            return "Attachment"
+        case 2:
+            return "Progress"
+        default:
+            return ""
+        }
     }
     
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell: UITableViewCell
-        
-        if indexPath.section == 0 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell", for: indexPath)
+        if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell", for: indexPath)
             
             let item = attachments[indexPath.row]
             
             cell.textLabel?.text = item.fileName
+            
+            return cell
         }
-        else {
-            cell = tableView.dequeueReusableCell(withIdentifier: "StepCell", for: indexPath)
+        else if indexPath.section == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "StepCell", for: indexPath)
             
             let item = steps[indexPath.row]
             
             cell.textLabel?.text = item.stepName
             cell.detailTextLabel?.text = item.description
+            
+            return cell
         }
-        
-        return cell
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "GovHeaderCell", for: indexPath) as! GovHeaderCell
+            
+            cell.flowNameLabel.text = self.item?.flowName
+            cell.depNameLabel.text = self.item?.depName
+            cell.creatorLabel.text = self.item?.creator
+            cell.createDateLabel.text = self.item?.createTime
+            
+            cell.remarkLabel.text = self.item?.remark
+//            cell.remarkLabel.attributedText = HtmlHelper.stringFromHtml(string: self.item?.remark)
+            
+            return cell
+        }
     }
     
     // MARK: - XML Parser

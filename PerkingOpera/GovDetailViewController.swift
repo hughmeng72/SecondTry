@@ -83,6 +83,22 @@ class GovDetailViewController: UITableViewController, XMLParserDelegate {
         super.viewWillAppear(animated)
     }
     
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showGovAttachment" {
+            
+            if let row = tableView.indexPathForSelectedRow?.row {
+                let item = self.attachments[row]
+                let destVC = segue.destination as! WebViewController
+                
+                destVC.urlString = item.uri
+            }
+        }
+    }
+    
 
     // MARK: - Table view data source
     
@@ -211,5 +227,5 @@ class GovDetailViewController: UITableViewController, XMLParserDelegate {
         
         return nil
     }
-
+    
 }

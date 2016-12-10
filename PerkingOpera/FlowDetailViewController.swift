@@ -79,6 +79,21 @@ class FlowDetailViewController: UITableViewController, XMLParserDelegate {
         task.resume()
     }
     
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showFlowAttachment" {
+            
+            if let row = tableView.indexPathForSelectedRow?.row {
+                let item = self.attachments[row]
+                let destVC = segue.destination as! WebViewController
+                
+                destVC.urlString = item.uri
+            }
+        }
+    }
+    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {

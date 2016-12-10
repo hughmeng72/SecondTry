@@ -437,6 +437,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="uUA-4c-1qF" kind="show" identifier="showFlowAttachment" id="dbP-NV-lFC"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StepCell" textLabel="46N-ju-jFR" detailTextLabel="SCb-Wn-8iP" style="IBUITableViewCellStyleSubtitle" id="18M-Ct-aT1">
                                 <rect key="frame" x="0.0" y="116" width="320" height="44"/>
@@ -1623,6 +1626,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="uUA-4c-1qF" kind="show" identifier="showGovAttachment" id="nvc-cJ-GUO"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StepCell" textLabel="k9K-C8-DFy" detailTextLabel="bBT-y2-zKS" style="IBUITableViewCellStyleSubtitle" id="eBb-Y4-srC">
                                 <rect key="frame" x="0.0" y="116" width="320" height="44"/>
@@ -1925,8 +1931,8 @@
         <image name="Reimburse_Request" width="45" height="45"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CI5-6l-ywl"/>
         <segue reference="EUc-Or-PT8"/>
-        <segue reference="86v-15-Lcr"/>
+        <segue reference="dbP-NV-lFC"/>
+        <segue reference="CI5-6l-ywl"/>
     </inferredMetricsTieBreakers>
 </document>

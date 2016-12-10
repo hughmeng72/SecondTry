@@ -151,7 +151,10 @@ class FlowDetailViewController: UITableViewController, XMLParserDelegate {
                 cell.creatorLabel.text = item.creator
                 cell.createDateLabel.text = item.createTime
                 cell.amountLabel.text = "\(item.amount)"
-                cell.remarkLabel.text = item.remark
+
+//                cell.remarkLabel.text = item.remark
+                cell.remarkLabel.attributedText = HtmlHelper.stringFromHtml(string: self.item?.remark)
+
                 cell.itemNameLabel.text = item.itemName
                 cell.projectNameLabel.text = item.projectName
                 cell.totalAmountLabel.text = "\(item.totalAmount)"

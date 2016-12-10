@@ -1489,7 +1489,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wIR-mx-cVX" id="zay-Mw-Ik3">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fe9-xn-V2b">
@@ -1931,8 +1931,8 @@
         <image name="Reimburse_Request" width="45" height="45"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EUc-Or-PT8"/>
-        <segue reference="dbP-NV-lFC"/>
         <segue reference="CI5-6l-ywl"/>
+        <segue reference="EUc-Or-PT8"/>
+        <segue reference="86v-15-Lcr"/>
     </inferredMetricsTieBreakers>
 </document>

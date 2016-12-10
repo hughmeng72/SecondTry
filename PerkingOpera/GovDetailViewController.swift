@@ -171,8 +171,8 @@ class GovDetailViewController: UITableViewController, XMLParserDelegate {
             cell.creatorLabel.text = self.item?.creator
             cell.createDateLabel.text = self.item?.createTime
             
-            cell.remarkLabel.text = self.item?.remark
-//            cell.remarkLabel.attributedText = HtmlHelper.stringFromHtml(string: self.item?.remark)
+//            cell.remarkLabel.text = self.item?.remark
+            cell.remarkLabel.attributedText = HtmlHelper.stringFromHtml(string: self.item?.remark)
             
             return cell
         }

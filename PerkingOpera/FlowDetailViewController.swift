@@ -11,22 +11,6 @@ import UIKit
 
 class FlowDetailViewController: UITableViewController, XMLParserDelegate {
     
-    @IBOutlet weak var flowNameLabel: UILabel!
-    @IBOutlet weak var flowNoLabel: UILabel!
-    @IBOutlet weak var depNameLabel: UILabel!
-    @IBOutlet weak var creatorLabel: UILabel!
-    @IBOutlet weak var createDateLabel: UILabel!
-    @IBOutlet weak var amountLabel: UILabel!
-    @IBOutlet weak var remarkLabel: UILabel!
-    @IBOutlet weak var itemNameLabel: UILabel!
-    @IBOutlet weak var projectNameLabel: UILabel!
-    @IBOutlet weak var totalAmountLabel: UILabel!
-    @IBOutlet weak var amountLeftLabel: UILabel!
-    @IBOutlet weak var amountBeingPaidProcurementLabel: UILabel!
-    @IBOutlet weak var amountPaidProcurementLabel: UILabel!
-    @IBOutlet weak var amountBeingPaidReimbursementLabel: UILabel!
-    @IBOutlet weak var amountPaidReimbursementLabel: UILabel!
-    
     var itemId: Int!
     
     private let soapMethod = "GetFlowDetail"
@@ -88,22 +72,6 @@ class FlowDetailViewController: UITableViewController, XMLParserDelegate {
                     return
                 }
                 
-                self.flowNameLabel.text = self.item?.flowName
-                self.flowNoLabel.text = self.item?.flowNo
-                self.depNameLabel.text = self.item?.depName
-                self.creatorLabel.text = self.item?.creator
-                self.createDateLabel.text = self.item?.createTime
-                self.amountLabel.text = "\(self.item!.amount)"
-                self.remarkLabel.text = self.item?.remark
-                self.itemNameLabel.text = self.item?.itemName
-                self.projectNameLabel.text = self.item?.projectName
-                self.totalAmountLabel.text = "\(self.item!.totalAmount)"
-                self.amountLeftLabel.text = "\(self.item!.amountLeft)"
-                self.amountBeingPaidProcurementLabel.text = "\(self.item!.amountToBePaidProcurement)"
-                self.amountPaidProcurementLabel.text = "\(self.item!.amountPaidProcurement)"
-                self.amountBeingPaidReimbursementLabel.text = "\(self.item!.amountToBePaidReimbursement)"
-                self.amountPaidReimbursementLabel.text = "\(self.item!.amountPaidReimbursement)"
-                
                 self.tableView.reloadData()
             }
         }
@@ -111,40 +79,25 @@ class FlowDetailViewController: UITableViewController, XMLParserDelegate {
         task.resume()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-//        if let view = self.tableView.tableHeaderView {
-//            view.setNeedsLayout()
-//            view.layoutIfNeeded()
-//            
-//            let height = view.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
-//            var headerFrame = view.frame
-//            headerFrame.size.height = height
-//            view.frame = headerFrame
-//            
-//            self.tableView.tableHeaderView = view
-//        }
-    }
-    
-    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
+            return 1
+        case 1:
             if item != nil && item?.attachments != nil {
                 return item!.attachments!.count
             }
             else {
                 return 0
             }
-        case 1:
+        case 2:
             if item != nil && item?.steps != nil {
                 return item!.steps!.count
             }
@@ -157,31 +110,62 @@ class FlowDetailViewController: UITableViewController, XMLParserDelegate {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return section == 0 ? "附件" : "审批进度"
+        switch section {
+        case 0:
+            return "基本信息"
+        case 1:
+            return "附件"
+        case 2:
+            return "审批进度"
+        default:
+            return ""
+        }
     }
     
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell: UITableViewCell
-        
-        if indexPath.section == 0 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell", for: indexPath)
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FlowHeaderCell", for: indexPath) as! FlowHeaderCell
+
+            if let item = self.item {
+                cell.flowNameLabel.text = item.flowName
+                cell.flowNoLabel.text = item.flowNo
+                cell.depNameLabel.text = item.depName
+                cell.creatorLabel.text = item.creator
+                cell.createDateLabel.text = item.createTime
+                cell.amountLabel.text = "\(item.amount)"
+                cell.remarkLabel.text = item.remark
+                cell.itemNameLabel.text = item.itemName
+                cell.projectNameLabel.text = item.projectName
+                cell.totalAmountLabel.text = "\(item.totalAmount)"
+                cell.amountLeftLabel.text = "\(item.amountLeft)"
+                cell.amountBeingPaidProcurementLabel.text = "\(item.amountToBePaidProcurement)"
+                cell.amountPaidProcurementLabel.text = "\(item.amountPaidProcurement)"
+                cell.amountBeingPaidReimbursementLabel.text = "\(item.amountToBePaidReimbursement)"
+                cell.amountPaidReimbursementLabel.text = "\(item.amountPaidReimbursement)"
+            }
+            
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell", for: indexPath)
             
             let item = attachments[indexPath.row]
             
             cell.textLabel?.text = item.fileName
-        }
-        else {
-            cell = tableView.dequeueReusableCell(withIdentifier: "StepCell", for: indexPath)
+            
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "StepCell", for: indexPath)
             
             let item = steps[indexPath.row]
             
             cell.textLabel?.text = item.stepName
             cell.detailTextLabel?.text = item.description
+
+            return cell
         }
-        
-        return cell
     }
     
     // MARK: - XML Parser

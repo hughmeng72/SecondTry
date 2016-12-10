@@ -115,11 +115,11 @@ class GovDetailViewController: UITableViewController, XMLParserDelegate {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Basic Info"
+            return "基本信息"
         case 1:
-            return "Attachment"
+            return "附件"
         case 2:
-            return "Progress"
+            return "审批进度"
         default:
             return ""
         }
@@ -127,7 +127,7 @@ class GovDetailViewController: UITableViewController, XMLParserDelegate {
     
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+     
         if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentCell", for: indexPath)
             

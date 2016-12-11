@@ -21,6 +21,8 @@
 		84854C421DF47DAC00B0F744 /* FlowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84854C411DF47DAC00B0F744 /* FlowDetailViewController.swift */; };
 		84A48A171DF3BEA5002A94D7 /* GovDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A48A161DF3BEA5002A94D7 /* GovDetailViewController.swift */; };
 		84A5A7C91DF4184D00903189 /* ResponseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5A7C81DF4184D00903189 /* ResponseResult.swift */; };
+		84A5D8F51DFCC9B900E6CDDA /* CalendarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5D8F41DFCC9B900E6CDDA /* CalendarDetailViewController.swift */; };
+		84A5D8F71DFCE08A00E6CDDA /* PlanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5D8F61DFCE08A00E6CDDA /* PlanDetailViewController.swift */; };
 		84A9DFF31DF0466800E576D3 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A9DFF21DF0466800E576D3 /* NoticeViewController.swift */; };
 		84A9DFF51DF076C700E576D3 /* Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A9DFF41DF076C700E576D3 /* Notice.swift */; };
 		84A9DFF71DF0799E00E576D3 /* FlowDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A9DFF61DF0799E00E576D3 /* FlowDoc.swift */; };
@@ -78,6 +80,8 @@
 		84854C411DF47DAC00B0F744 /* FlowDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowDetailViewController.swift; sourceTree = "<group>"; };
 		84A48A161DF3BEA5002A94D7 /* GovDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GovDetailViewController.swift; sourceTree = "<group>"; };
 		84A5A7C81DF4184D00903189 /* ResponseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseResult.swift; sourceTree = "<group>"; };
+		84A5D8F41DFCC9B900E6CDDA /* CalendarDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewController.swift; sourceTree = "<group>"; };
+		84A5D8F61DFCE08A00E6CDDA /* PlanDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanDetailViewController.swift; sourceTree = "<group>"; };
 		84A9DFF21DF0466800E576D3 /* NoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		84A9DFF41DF076C700E576D3 /* Notice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notice.swift; sourceTree = "<group>"; };
 		84A9DFF61DF0799E00E576D3 /* FlowDoc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowDoc.swift; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 				84B236091DF33F3100886E50 /* WebViewController.swift */,
 				84A48A161DF3BEA5002A94D7 /* GovDetailViewController.swift */,
 				84854C411DF47DAC00B0F744 /* FlowDetailViewController.swift */,
+				84A5D8F41DFCC9B900E6CDDA /* CalendarDetailViewController.swift */,
+				84A5D8F61DFCE08A00E6CDDA /* PlanDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -299,6 +305,7 @@
 				8405C1E91DF1C9C000CB3B2D /* MailTableViewController.swift in Sources */,
 				84C2D85F1DF1F0C8000EAD22 /* Flow.swift in Sources */,
 				84A5A7C91DF4184D00903189 /* ResponseResult.swift in Sources */,
+				84A5D8F71DFCE08A00E6CDDA /* PlanDetailViewController.swift in Sources */,
 				84854C421DF47DAC00B0F744 /* FlowDetailViewController.swift in Sources */,
 				84C2D85B1DF1E323000EAD22 /* CalendarTableViewController.swift in Sources */,
 				841F7F801DF19823007D6F1C /* ItemCell.swift in Sources */,
@@ -309,6 +316,7 @@
 				84C2D8591DF1E1AF000EAD22 /* Calendar.swift in Sources */,
 				843D65071DF279E300798F50 /* Item2Cell.swift in Sources */,
 				84A48A171DF3BEA5002A94D7 /* GovDetailViewController.swift in Sources */,
+				84A5D8F51DFCC9B900E6CDDA /* CalendarDetailViewController.swift in Sources */,
 				84C2D85D1DF1EBE3000EAD22 /* ShowPlanTableViewController.swift in Sources */,
 				84B236051DF30B1800886E50 /* GovTodoTableViewController.swift in Sources */,
 				84A9DFF51DF076C700E576D3 /* Notice.swift in Sources */,

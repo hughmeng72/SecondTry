@@ -125,8 +125,11 @@ class ShowPlanTableViewController: UITableViewController, XMLParserDelegate {
         if segue.identifier == "showPlan" {
             if let row = tableView.indexPathForSelectedRow?.row {
                 let item = list[row]
-                let webController = segue.destination as! WebViewController
+
+//                let webController = segue.destination as! CalendarDetailViewController
+                let webController = segue.destination as! PlanDetailViewController
                 
+                webController.attachments = item.attachments
                 webController.urlString = item.url
             }
         }

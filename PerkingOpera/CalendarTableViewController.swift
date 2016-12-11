@@ -122,11 +122,22 @@ class CalendarTableViewController: UITableViewController, XMLParserDelegate {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showCalendar" {
+//            if let row = tableView.indexPathForSelectedRow?.row {
+//                let item = list[row]
+//                let webController = segue.destination as! WebViewController
+//                
+//                webController.urlString = item.url
+//            }
+//        }
+
         if segue.identifier == "showCalendar" {
             if let row = tableView.indexPathForSelectedRow?.row {
                 let item = list[row]
-                let webController = segue.destination as! WebViewController
                 
+                let webController = segue.destination as! PlanDetailViewController
+                
+                webController.attachments = item.attachments
                 webController.urlString = item.url
             }
         }

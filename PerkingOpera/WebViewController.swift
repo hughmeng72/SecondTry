@@ -29,6 +29,7 @@ class WebViewController: UIViewController, WKUIDelegate {
         let url = URL(string: self.urlString)
         let request = URLRequest(url: url!)
         webView.load(request)
+
     }
     
     override func didReceiveMemoryWarning() {

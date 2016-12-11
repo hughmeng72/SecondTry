@@ -25,28 +25,49 @@ class LoginViewController: UIViewController, UITextFieldDelegate, XMLParserDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadAccountInfo()
+        
+        registerDismissKeyboardEvent()
+
+        self.UserName.delegate = self
+        self.Password.delegate = self
+
+        if self.UserName.text == "" {
+            UserName.becomeFirstResponder()
+        }
+    }
+    
+    func loadAccountInfo() {
+        
         let passwordSaved = UserDefaults.standard.bool(forKey: "SavePassword")
         self.savePassword.isOn = passwordSaved
-
+        
         if passwordSaved {
             self.UserName.text = UserDefaults.standard.string(forKey: "UserName")
             self.Password.text = UserDefaults.standard.string(forKey: "Password")
         }
-        
-        dismissKeyboard()
     }
     
     // Dismiss keyboard when user click anyplace else
-    func dismissKeyboard() {
+    func registerDismissKeyboardEvent() {
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
     }
-   
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == UserName {
+            Password.becomeFirstResponder()
+        }
+        else {
+            textField.resignFirstResponder()
+        }
+        
+        return true
+    }
     
     @IBAction func Login(_ sender: Any) {
-//        let userName = "zhangq"
-//        let password = "123456"
         
         let userName = UserName.text!
         let password = Password.text!

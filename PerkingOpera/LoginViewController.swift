@@ -16,29 +16,40 @@ class LoginViewController: UIViewController, UITextFieldDelegate, XMLParserDeleg
     var elementValue: String?
     
     @IBOutlet weak var UserName: UITextField!
+    
     @IBOutlet weak var Password: UITextField!
+    
+    @IBOutlet weak var savePassword: UISwitch!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Dismiss keyboard when user click anyplace else
+        let passwordSaved = UserDefaults.standard.bool(forKey: "SavePassword")
+        self.savePassword.isOn = passwordSaved
+
+        if passwordSaved {
+            self.UserName.text = UserDefaults.standard.string(forKey: "UserName")
+            self.Password.text = UserDefaults.standard.string(forKey: "Password")
+        }
+        
+        dismissKeyboard()
+    }
+    
+    // Dismiss keyboard when user click anyplace else
+    func dismissKeyboard() {
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-        // Dispose of any resources that can be recreated.
-    }
+   
     
     @IBAction func Login(_ sender: Any) {
-        let userName = "zhangq"
-        let password = "123456"
+//        let userName = "zhangq"
+//        let password = "123456"
         
-//        let userName = UserName.text!
-//        let password = Password.text!
+        let userName = UserName.text!
+        let password = Password.text!
         
         let parameters = "<userName>\(userName)</userName>"
             + "<password>\(password)</password>"
@@ -60,10 +71,28 @@ class LoginViewController: UIViewController, UITextFieldDelegate, XMLParserDeleg
             
             // if we've gotten here, update the UI
             DispatchQueue.main.async {
-                guard let user = Repository.sharedInstance.user,
-                    user.error.result == 1
+                if let user = Repository.sharedInstance.user, user.error.result == 1 {
+                    UserDefaults.standard.set(self.savePassword.isOn, forKey: "SavePassword")
+                    
+                    if self.savePassword.isOn {
+                        UserDefaults.standard.set(self.UserName.text, forKey: "UserName")
+                        UserDefaults.standard.set(self.Password.text, forKey: "Password")
+                    }
                     else {
-                        let controller = UIAlertController(
+                        UserDefaults.standard.set("", forKey: "UserName")
+                        UserDefaults.standard.set("", forKey: "Password")
+                    }
+                    
+                    UserDefaults.standard.synchronize()
+                    
+                    self.performSegue(withIdentifier: "showMain", sender: nil)
+                }
+                else {
+                        UserDefaults.standard.set("", forKey: "UserName")
+                        UserDefaults.standard.set("", forKey: "Password")
+                        UserDefaults.standard.synchronize()
+                    
+                    let controller = UIAlertController(
                             title: "用户名或密码错误",
                             message: "", preferredStyle: .alert)
                         
@@ -77,8 +106,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, XMLParserDeleg
                         
                         return
                 }
-                
-                self.performSegue(withIdentifier: "showMain", sender: nil)
             }
         }
         
